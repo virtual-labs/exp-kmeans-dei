@@ -1,0 +1,10 @@
+
+C:\Users\3337r\OneDrive\Desktop\Vlab\exp-kmeans-dei\experiment\simulation\js\main.js
+  380:7   warning  'simState' is assigned a value but never used  no-unused-vars
+  617:5   warning  'simCanvas' is defined but never used          no-unused-vars
+  617:16  warning  'simCtx' is defined but never used             no-unused-vars
+  617:24  warning  'simTooltip' is defined but never used         no-unused-vars
+  617:36  warning  'simGuide' is defined but never used           no-unused-vars
+
+✖ 5 problems (0 errors, 5 warnings)
+
