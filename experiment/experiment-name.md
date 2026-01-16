@@ -1,1 +1,1 @@
-## Clustering using K-Means
+## Clustering: K-Means Algorithm

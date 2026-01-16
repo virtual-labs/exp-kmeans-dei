@@ -19,6 +19,8 @@ To determine the optimal number of clusters, the Elbow method is used. The elbow
     <img src="images/elbow.png" alt="Elbow Method Graph" style="max-width: 80%;">
 </div>
 
+The elbow method is used to determine the optimal number of clusters in k-means clustering. The elbow method plots the value of the cost function produced by different values of k. The value of k at which improvement in distortion declines the most is called the elbow, at which we should stop dividing the data into further clusters.
+
 ### 4. Merits of K-Means Clustering
 - K-Means is simple to understand and easy to implement, making it suitable for clustering large datasets.
 - It is computationally efficient and scales well when the number of clusters and features is relatively small.

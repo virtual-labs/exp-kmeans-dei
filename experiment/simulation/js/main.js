@@ -259,10 +259,10 @@ plt.show()`,
 kmeans = KMeans(n_clusters=5, random_state=42)
 kmeans.fit(X_scaled)
 print("Model trained successfully")`,
-        output: `<div class="output-success">Model trained successfully</div>
-<div style="margin-top: 10px;">
-    <img src="./images/model_train.png" alt="Sklearn Output" style="max-width: 30%; border: 1px solid #ddd; border-radius: 4px;">
-</div>`
+        output: `<img src="./images/model_train.png" alt="Sklearn Output" style="max-width: 30%; border: 1px solid #ddd; border-radius: 4px;">
+</div>
+<div class="output-success">Model trained successfully</div>
+<div style="margin-top: 10px;">`
       }
     ]
   },
@@ -345,8 +345,8 @@ print("Davies-Bouldin Index:", db_score)`,
     blocks: [
       {
         code: `# Interactive K-Means Simulation
-# Click the 'Run' button (orange arrow) to open the full-screen simulator.
-# Explore how K-Means Clustering segments the customer dataset in real-time.`,
+Click the 'Run' button (orange arrow) to open the full-screen simulator.
+Explore how K-Means Clustering segments the customer dataset in real-time.`,
         output: `<div class="output-success">Full-Screen Simulator Ready. Click the Run button to start exploring.</div>`
       }
     ]
@@ -969,7 +969,7 @@ function showCompletionMessage() {
   outputContent.innerHTML = `
     <div style="text-align: center;">
       <h1 style="color: #2a9d8f; font-size: 2.5rem; margin-bottom: 20px;">Experiment Completed! ✔️</h1>
-      <p style="font-size: 1.5rem; color: #333;">You have completed K-Means Clustering successfully!</p>
+      <p style="font-size: 1.5rem; color: #333;">You have completed  Clustering: K-Means Algorithm successfully!</p>
       <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; background-color: #f7a072; color: white; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer;">Restart Experiment</button>
     </div>
   `;
