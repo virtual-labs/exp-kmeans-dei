@@ -14,6 +14,5 @@ The objective of this experiment is to segment customers into distinct groups ba
     - Calculate the mean of each cluster and reassign the position of centroids.
     - Repeat until the centroids stop moving.
     - After this process, each data point will be assigned a cluster number.
-
-**Step 6**: **Model Evaluation**: Evaluate the model using the 
-**Silhouette Score**, **Davies-Bouldin Score**, and **Calinski-Harabasz Score**.
+    
+**Step 6**: **Model Evaluation**: Evaluate the model using the **Silhouette Score**, **Davies-Bouldin Score**, and **Calinski-Harabasz Score**.
