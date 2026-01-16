@@ -355,21 +355,18 @@
           
               </div>
               <p>The objective of this experiment is to segment customers into distinct groups based on their purchasing behavior using the K-Means clustering algorithm. The input to the model consists of independent variables representing customer attributes, specifically Annual Income and Spending Score, which are used to measure similarity among customers. Since K-Means is an unsupervised learning technique, there is no dependent or output variable involved in the clustering process.</p>
-          <ol>
-          <li><strong>Import Required Libraries</strong>: Import the essential Python libraries: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, and <code>scikit-learn</code>.</li>
-          <li><strong>Load the Dataset</strong>: Load the <code>Mall_Customers.csv</code> dataset. The dataset consists of customer information with 4 columns, out of which <strong>Annual Income</strong> and <strong>Spending Score</strong> are used for analysis.</li>
-          <li><strong>Perform Data Analysis</strong>: Analyze the dataset to understand its structure, identify missing values, and explore feature distributions.</li>
-          <li><strong>Apply Feature Scaling</strong>: Apply feature scaling during data preprocessing to normalize the features. Feature scaling is necessary because <strong>Annual Income</strong> ranges from 10 to 150, while <strong>Spending Score</strong> ranges from 1 to 100.</li>
-          <li><strong>Model Training</strong>: Train the K-Means model by performing the following steps:<ul>
-          <li>Place initial centroids randomly.</li>
-          <li>Assign each data point to the nearest centroid.</li>
-          <li>Calculate the mean of each cluster and reassign the position of centroids.</li>
-          <li>Repeat until the centroids stop moving.</li>
-          <li>After this process, each data point will be assigned a cluster number.</li>
-          </ul>
-          </li>
-          <li><strong>Model Evaluation</strong>: Evaluate the model using the <strong>Silhouette Score</strong>, <strong>Davies-Bouldin Score</strong>, and <strong>Calinski-Harabasz Score</strong>.</li>
-          </ol>
+          <p><strong>Step 1</strong>: <strong>Import Required Libraries</strong>: Import the essential Python libraries: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, and <code>scikit-learn</code>.</p>
+          <p><strong>Step 2</strong>: <strong>Load the Dataset</strong>: Load the <code>Mall_Customers.csv</code> dataset. The dataset consists of customer information with 4 columns, out of which <strong>Annual Income</strong> and <strong>Spending Score</strong> are used for analysis.</p>
+          <p><strong>Step 3</strong>: <strong>Perform Data Analysis</strong>: Analyze the dataset to understand its structure, identify missing values, and explore feature distributions.</p>
+          <p><strong>Step 4</strong>: <strong>Apply Feature Scaling</strong>: Apply feature scaling during data preprocessing to normalize the features. Feature scaling is necessary because <strong>Annual Income</strong> ranges from 10 to 150, while <strong>Spending Score</strong> ranges from 1 to 100.</p>
+          <p><strong>Step 5</strong>: <strong>Model Training</strong>: Train the K-Means model by performing the following steps:
+              - Place initial centroids randomly.
+              - Assign each data point to the nearest centroid.
+              - Calculate the mean of each cluster and reassign the position of centroids.
+              - Repeat until the centroids stop moving.
+              - After this process, each data point will be assigned a cluster number.</p>
+          <p><strong>Step 6</strong>: <strong>Model Evaluation</strong>: Evaluate the model using the 
+          <strong>Silhouette Score</strong>, <strong>Davies-Bouldin Score</strong>, and <strong>Calinski-Harabasz Score</strong>.</p>
           
             </div>
           <div class="bug-report-mobile">
