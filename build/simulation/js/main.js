@@ -345,9 +345,9 @@ print("Davies-Bouldin Index:", db_score)`,
     blocks: [
       {
         code: `# Interactive K-Means Simulation
-Click the 'Run' button (orange arrow) to open the full-screen simulator.
+Click the 'Enter Interactive Animation' button to open the full-screen simulator.
 Explore how K-Means Clustering segments the customer dataset in real-time.`,
-        output: `<div class="output-success">Full-Screen Simulator Ready. Click the Run button to start exploring.</div>`
+        output: `<div class="output-success">Full-Screen Simulator Ready. Click the 'Enter Interactive Animation' button to start exploring.</div>`
       }
     ]
   }
@@ -393,7 +393,18 @@ const simState = {
   historyStack: []
 };
 
-const CLUSTER_COLORS = ['#f72585', '#4cc9f0', '#fee440', '#7209b7', '#00ff7f', '#ff9f1c', '#ff5555', '#55ff55', '#5555ff', '#ff55ff'];
+const CLUSTER_COLORS = [
+  '#f72585', // Pink
+  '#4cc9f0', // Sky Blue
+  '#ffdb58', // Mustard Yellow
+  '#7209b7', // Purple
+  '#34d399', // Emerald Green
+  '#f97316', // Orange
+  '#ef4444', // Red
+  '#3b82f6', // Bright Blue
+  '#8b5cf6', // Violet
+  '#ec4899'  // Pink
+];
 
 // State Management
 let STATE = {
@@ -479,12 +490,32 @@ function renderSidebar() {
     </svg>
     Download Experiment
   `;
-  downloadBtn.style.backgroundColor = "#f57c2a";
   downloadBtn.style.textAlign = 'center';
   downloadBtn.style.marginTop = "10px";
-  downloadBtn.style.color = "white";
-  downloadBtn.onclick = downloadPDF;
+  
+  // Check if all steps are completed
+  const allCompleted = checkAllStepsCompleted();
+  if (allCompleted) {
+    downloadBtn.style.backgroundColor = "#f57c2a";
+    downloadBtn.style.color = "white";
+    downloadBtn.style.opacity = "1";
+    downloadBtn.style.cursor = "pointer";
+    downloadBtn.disabled = false;
+    downloadBtn.onclick = downloadPDF;
+  } else {
+    downloadBtn.style.backgroundColor = "#ccc";
+    downloadBtn.style.color = "#666";
+    downloadBtn.style.opacity = "0.7";
+    downloadBtn.style.cursor = "not-allowed";
+    downloadBtn.disabled = true;
+    downloadBtn.title = "Complete all steps to download the report";
+  }
   stepsContainer.appendChild(downloadBtn);
+}
+
+// Function to check if all steps are completed
+function checkAllStepsCompleted() {
+  return STATE.stepsStatus.every(status => status.completed);
 }
 
 function loadStep(index) {
@@ -529,35 +560,53 @@ function updateUI() {
   bottomPane.style.flexDirection = '';
   bottomPane.style.justifyContent = '';
   bottomPane.style.alignItems = '';
-  outputContent.innerHTML = '<div class="placeholder-text">Click the Run button to execute...</div>';
 
-  // Reset Button
-  runBtn.style.display = 'flex';
-  runBtn.classList.remove('completed');
-  runBtn.style.backgroundColor = '#F57C2A';
-  runBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
-  runBtn.disabled = false;
-  runBtn.onclick = runStep;
+  // Special Handling for Model Simulation - LARGE BUTTON
+  if (step.id === 'model_simulation') {
+    outputContent.innerHTML = `
+      <div class="experiment-completed-banner">
+        <h2>Experiment Completed! <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#429d93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></h2>
+        <p>You have completed K-Means Clustering successfully!</p>
+        <button id="enterSimBtn" class="btn-enter-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Enter Interactive Animation
+        </button>
+      </div>
+    `;
+    setTimeout(() => {
+      const enterBtn = document.getElementById('enterSimBtn');
+      if (enterBtn) enterBtn.onclick = openSimulation;
+    }, 0);
+
+    // Hide standard run button for this step to focus on the large one
+    runBtn.style.display = 'none';
+  } else {
+    outputContent.innerHTML = '<div class="placeholder-text">Click the Run button to execute...</div>';
+    runBtn.style.display = 'flex';
+    runBtn.classList.remove('completed');
+    runBtn.style.backgroundColor = '#F57C2A';
+    runBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
+    runBtn.disabled = false;
+    runBtn.onclick = runStep;
+  }
+}
+
+function openSimulation() {
+  const simulationPage = document.getElementById('simulationPage');
+  const mainContainer = document.querySelector('.container');
+
+  mainContainer.classList.add('hidden');
+  simulationPage.classList.remove('hidden');
+
+  // Always re-init or re-size to ensure context is correct
+  setTimeout(() => {
+    initInteractiveSim();
+  }, 150);
 }
 
 function runStep() {
   const step = stepsData[STATE.stepIndex];
   const block = step.blocks[STATE.subStepIndex];
-
-  // Special Handling for Model Simulation
-  if (step.id === 'model_simulation') {
-    const simulationPage = document.getElementById('simulationPage');
-    const mainContainer = document.querySelector('.container');
-
-    mainContainer.classList.add('hidden');
-    simulationPage.classList.remove('hidden');
-
-    // Always re-init or re-size to ensure context is correct
-    setTimeout(() => {
-      initInteractiveSim();
-    }, 150);
-    return;
-  }
 
   outputContent.innerHTML = '<div class="loading-spinner">Running code...</div>';
   runBtn.disabled = true;
@@ -795,22 +844,22 @@ function stepAlgo() {
       state.converged = true;
 
       // Generate results list
-      let resultsHtml = `<ul style="font-size: 0.9rem; margin-top: 10px; list-style: none; padding-left: 0;">`;
+      let resultsHtml = `<ul style="font-size: 0.95rem; margin-top: 12px; list-style: none; padding-left: 0;">`;
       state.centroids.forEach((c, i) => {
         const valX = Math.round(((c.x - state.padding) / (canvas.width - state.padding * 2)) * state.xMax);
         const valY = Math.round(((canvas.height - c.y - state.padding) / (canvas.height - state.padding * 2)) * state.yMax);
 
-        const colorBox = `<span style="display:inline-block; width:10px; height:10px; background:${c.color}; margin-right:8px; border-radius:50%;"></span>`;
-        resultsHtml += `<li style="margin-bottom: 5px;">${colorBox} <strong>Cluster ${i + 1}:</strong> $${valX}k, Score ${valY}</li>`;
+        const colorDot = `<span style="display:inline-block; width:10px; height:10px; background:${c.color}; margin-right:8px; border-radius:50%; flex-shrink:0; border: 1px solid rgba(0,0,0,0.1);"></span>`;
+        resultsHtml += `<li style="margin-bottom: 8px; color: #1e293b; display: flex; align-items: center; white-space: nowrap;">${colorDot} <strong>Cluster ${i + 1}:</strong> &nbsp; $${valX}k, Score ${valY}</li>`;
       });
       resultsHtml += `</ul>`;
 
       guideText.innerHTML = `
-        <h4 style="color: #4ade80; margin-bottom: 5px;">✔ Converged!</h4>
-        <p>We found <strong>${state.k} customer segments</strong>.</p>
-        <p style="margin-top: 10px;">Final Centroids (Crosses):</p>
+        <h4 style="color: #059669; margin-bottom: 8px; font-weight: 700;">✔ Converged!</h4>
+        <p style="color: #334155; margin-bottom: 12px;">We found <strong>${state.k} customer segments</strong>.</p>
+        <p style="color: #475569; font-weight: 600; margin-bottom: 5px;">Final Centroids (Crosses):</p>
         ${resultsHtml}
-        <p style="margin-top: 15px; font-style: italic; opacity: 0.8; font-size: 0.9em;">Hover over clusters to analyze patterns!</p>
+        <p style="margin-top: 15px; font-style: italic; color: #64748b; font-size: 0.95em;">Hover over clusters to analyze patterns!</p>
       `;
       stopAutoRun();
     } else {
@@ -828,7 +877,8 @@ function stepAlgo() {
 
 function draw() {
   if (!ctx) return;
-  ctx.fillStyle = '#0f111a';
+  // Pure White Canvas Background
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   if (state.viewMode === 'VORONOI' && state.centroids.length > 0) drawVoronoi();
   drawAxes();
@@ -844,8 +894,12 @@ function draw() {
   }
   state.points.forEach(p => {
     ctx.beginPath(); ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-    ctx.fillStyle = p.clusterIndex === -1 ? '#555' : CLUSTER_COLORS[p.clusterIndex];
+    ctx.fillStyle = p.clusterIndex === -1 ? '#cbd5e1' : CLUSTER_COLORS[p.clusterIndex];
     ctx.fill();
+    // Add subtle border to points for clarity on white background
+    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+    ctx.lineWidth = 0.5;
+    ctx.stroke();
   });
   state.centroids.forEach(c => {
     if (c.history.length > 0) {
@@ -868,18 +922,45 @@ function draw() {
 }
 
 function drawAxes() {
-  const p = state.padding; ctx.strokeStyle = '#333'; ctx.lineWidth = 1; ctx.font = '12px "Outfit"'; ctx.fillStyle = '#aaa'; ctx.textAlign = 'center';
-  ctx.beginPath(); ctx.moveTo(p, p); ctx.lineTo(p, canvas.height - p); ctx.lineTo(canvas.width - p, canvas.height - p); ctx.stroke();
+  const p = state.padding;
+  ctx.strokeStyle = '#94a3b8'; // Slate 300 for soft but visible lines
+  ctx.lineWidth = 1;
+  ctx.font = '500 12px "Outfit"';
+  ctx.fillStyle = '#475569'; // Slate 600 for text readability
+  ctx.textAlign = 'center';
+
+  // Axes
+  ctx.beginPath();
+  ctx.moveTo(p, p);
+  ctx.lineTo(p, canvas.height - p);
+  ctx.lineTo(canvas.width - p, canvas.height - p);
+  ctx.stroke();
+
+  // Grid lines and labels
+  ctx.lineWidth = 0.5;
+  ctx.strokeStyle = '#e2e8f0'; // Slate 200 for grid
+
   for (let i = 0; i <= 100; i += 20) {
     const y = (canvas.height - p) - (i / state.yMax) * (canvas.height - p * 2);
-    ctx.fillText(i.toString(), p - 15, y + 4);
+    ctx.beginPath(); ctx.moveTo(p, y); ctx.lineTo(canvas.width - p, y); ctx.stroke();
+    ctx.fillText(i.toString(), p - 18, y + 4);
   }
   for (let i = 0; i <= 140; i += 20) {
     const x = p + (i / state.xMax) * (canvas.width - p * 2);
-    ctx.fillText(i.toString(), x, canvas.height - p + 20);
+    ctx.beginPath(); ctx.moveTo(x, p); ctx.lineTo(x, canvas.height - p); ctx.stroke();
+    ctx.fillText(i.toString(), x, canvas.height - p + 22);
   }
-  ctx.font = 'bold 16px "Outfit"'; ctx.fillText("Annual Income (k$)", canvas.width / 2, canvas.height - 10);
-  ctx.save(); ctx.translate(20, canvas.height / 2); ctx.rotate(-Math.PI / 2); ctx.fillText("Spending Score (1-100)", 0, 0); ctx.restore();
+
+  // Titles
+  ctx.font = 'bold 15px "Outfit"';
+  ctx.fillStyle = '#0f172a'; // Slate 900 for titles
+  ctx.fillText("Annual Income (k$)", canvas.width / 2, canvas.height - 15);
+
+  ctx.save();
+  ctx.translate(20, canvas.height / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText("Spending Score (1-100)", 0, 0);
+  ctx.restore();
 }
 
 function drawVoronoi() {
