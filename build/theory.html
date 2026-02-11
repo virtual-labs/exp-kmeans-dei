@@ -349,11 +349,11 @@
                         </div>
                     </div>
                 </div>
-          </div>            <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
-              <div class="text-center fix-spacing">
-                <h2 id="clustering-k-means-algorithm">Clustering: K-Means Algorithm</h2>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="clustering-k-means-algorithm">Clustering: K-Means Algorithm</h2>
           
-              </div>
+            </div>
               <p>Clustering is the task of grouping observations in such a way that members of the same cluster are more similar to each other and members of different clusters are very different from each other. Clustering is commonly used to explore a dataset to either identify the underlying patterns in it or to create a group of characteristics.</p>
           <h3 id="1-k-means-clustering-algorithm">1. K-Means Clustering Algorithm</h3>
           <p>The K-Means clustering algorithm is an iterative process of moving the centers of clusters or centroids to the mean position of their constituent points, and reassigning instances to their closest clusters iteratively until there is no significant change in the number of cluster centers possible or number of iterations reached.</p>
@@ -382,8 +382,44 @@
           <li>It is sensitive to the initial selection of centroids and may converge to a local optimum.</li>
           <li>The algorithm performs poorly with non-spherical clusters, varying cluster sizes, and is highly sensitive to outliers.</li>
           </ul>
+          <h3 id="6-algorithm">6. Algorithm</h3>
+          <ol>
+          <li><strong>Step 1:</strong> Choose K (number of clusters)</li>
+          <li><strong>Step 2:</strong> Initialize K centroids:<ul>
+          <li><strong>Random:</strong> Pick K random data points as initial centroids</li>
+          <li><strong>Pick first centroid randomly:</strong> For each subsequent centroid, pick point with probability proportional to squared distance from nearest existing centroid</li>
+          </ul>
+          </li>
+          <li><strong>Step 3:</strong> <strong>REPEAT</strong> until convergence:<ul>
+          <li><strong>Step 3a: Assignment Step</strong><ul>
+          <li>For each data point:<ul>
+          <li>Calculate distance to all K centroids</li>
+          <li>Distance formula: <code>d = √[(x₁-c₁)² + (x₂-c₂)² + ...]</code></li>
+          <li>Assign point to cluster with nearest centroid</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><strong>Step 3b: Update Step</strong><ul>
+          <li>For each cluster k:<ul>
+          <li>Calculate new centroid as mean of all points in cluster</li>
+          <li>New centroid coordinates = <code>(Σxᵢ/n, Σyᵢ/n, ...)</code></li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><strong>Step 3c: Check Convergence</strong><ul>
+          <li>If centroids haven't moved (or moved less than threshold) → <strong>STOP</strong></li>
+          <li>If maximum iterations reached → <strong>STOP</strong></li>
+          <li>Otherwise → Continue to Step 3a</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><strong>Step 4:</strong> Output final cluster assignments and centroid positions</li>
+          </ol>
           
-            </div>
+          </div>
           <div class="bug-report-mobile">
               <bug-report id="bug-report" title="[BUG REPORT] CLUSTERING: K-MEANS ALGORITHM" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;CLUSTERING: K-MEANS ALGORITHM&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
                           position: fixed; 

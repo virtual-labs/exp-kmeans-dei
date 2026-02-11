@@ -407,6 +407,8 @@ const CLUSTER_COLORS = [
 ];
 
 // State Management
+let hasCompletedOnce = sessionStorage.getItem('kmeans_completed') === 'true';
+
 let STATE = {
   stepIndex: 0,
   subStepIndex: 0,
@@ -493,8 +495,8 @@ function renderSidebar() {
   downloadBtn.style.textAlign = 'center';
   downloadBtn.style.marginTop = "10px";
   
-  // Check if all steps are completed
-  const allCompleted = checkAllStepsCompleted();
+  // Check if all steps are completed (or were completed before a restart)
+  const allCompleted = checkAllStepsCompleted() || hasCompletedOnce;
   if (allCompleted) {
     downloadBtn.style.backgroundColor = "#f57c2a";
     downloadBtn.style.color = "white";
@@ -584,6 +586,8 @@ function updateUI() {
     }, 0);
 
     // Enable the Download Experiment button when Model Simulation step is reached
+    hasCompletedOnce = true;
+    sessionStorage.setItem('kmeans_completed', 'true');
     STATE.stepsStatus.forEach(s => s.completed = true);
     renderSidebar();
 
