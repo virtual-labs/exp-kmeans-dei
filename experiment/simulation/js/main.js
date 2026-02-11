@@ -503,12 +503,16 @@ function renderSidebar() {
     downloadBtn.disabled = false;
     downloadBtn.onclick = downloadPDF;
   } else {
-    downloadBtn.style.backgroundColor = "#ccc";
-    downloadBtn.style.color = "#666";
-    downloadBtn.style.opacity = "0.7";
-    downloadBtn.style.cursor = "not-allowed";
-    downloadBtn.disabled = true;
-    downloadBtn.title = "Complete all steps to download the report";
+    downloadBtn.style.backgroundColor = "#f5f5f5";
+    downloadBtn.style.color = "#9e9e9e";
+    downloadBtn.style.opacity = "1";
+    downloadBtn.style.cursor = "default";
+    downloadBtn.style.border = "1px solid #e0e0e0";
+    downloadBtn.disabled = false;
+    downloadBtn.title = "Need to run the Experiment to download the pdf.";
+    downloadBtn.onclick = function () {
+      alert("Need to run the Experiment to download the pdf.");
+    };
   }
   stepsContainer.appendChild(downloadBtn);
 }
@@ -565,8 +569,9 @@ function updateUI() {
   if (step.id === 'model_simulation') {
     outputContent.innerHTML = `
       <div class="experiment-completed-banner">
-        <h2>Experiment Completed! <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#429d93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></h2>
-        <p>You have completed K-Means Clustering successfully!</p>
+        <div style="margin-bottom:10px;"><span class="clap-emoji">\ud83d\udc4f</span> <span class="clap-emoji">\ud83d\udc4f</span> <span class="clap-emoji">\ud83d\udc4f</span></div>
+        <h2>Congratulations!</h2>
+        <p>You have successfully completed the K-Means Clustering experiment. You now understand how K-Means groups data into clusters and how the Elbow method helps determine the optimal number of clusters.</p>
         <button id="enterSimBtn" class="btn-enter-animation">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
           Enter Interactive Animation
@@ -577,6 +582,10 @@ function updateUI() {
       const enterBtn = document.getElementById('enterSimBtn');
       if (enterBtn) enterBtn.onclick = openSimulation;
     }, 0);
+
+    // Enable the Download Experiment button when Model Simulation step is reached
+    STATE.stepsStatus.forEach(s => s.completed = true);
+    renderSidebar();
 
     // Hide standard run button for this step to focus on the large one
     runBtn.style.display = 'none';
@@ -650,7 +659,7 @@ function runStep() {
           runBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
           runBtn.style.backgroundColor = '#72b2f7ff';
           runBtn.disabled = false;
-          runBtn.onclick = showCompletionMessage;
+          runBtn.onclick = () => loadStep(STATE.stepIndex);
         }, 500);
       }
     }
@@ -717,7 +726,7 @@ function initInteractiveSim() {
     document.querySelector('.container').classList.remove('hidden');
     STATE.stepsStatus[STATE.stepIndex].completed = true;
     renderSidebar();
-    showCompletionMessage();
+    updateUI();
   };
 
   // Controls Wiring
@@ -1039,23 +1048,7 @@ function highlightCode(code) {
     .replace(/return /g, '<span class="kw">return </span>');
 }
 
-function showCompletionMessage() {
-  outputContent.innerHTML = '';
-  bottomPane.classList.add('active-output');
-  bottomPane.style.display = 'flex';
-  bottomPane.style.flexDirection = 'column';
-  bottomPane.style.justifyContent = 'center';
-  bottomPane.style.alignItems = 'center';
 
-  outputContent.innerHTML = `
-    <div style="text-align: center;">
-      <h1 style="color: #2a9d8f; font-size: 2.5rem; margin-bottom: 20px;">Experiment Completed! ✔️</h1>
-      <p style="font-size: 1.5rem; color: #333;">You have completed  Clustering: K-Means Algorithm successfully!</p>
-      <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; background-color: #f7a072; color: white; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer;">Restart Experiment</button>
-    </div>
-  `;
-  runBtn.style.display = 'none';
-}
 
 function downloadPDF() {
   const link = document.createElement('a');
