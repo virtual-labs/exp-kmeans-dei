@@ -29,3 +29,25 @@ The elbow method is used to determine the optimal number of clusters in k-means 
 ### 5. Demerits of K-Means Clustering
 - It is sensitive to the initial selection of centroids and may converge to a local optimum.
 - The algorithm performs poorly with non-spherical clusters, varying cluster sizes, and is highly sensitive to outliers.
+
+### 6. Algorithm
+
+1. **Step 1:** Choose K (number of clusters)
+2. **Step 2:** Initialize K centroids:
+    - **Random:** Pick K random data points as initial centroids
+    - **Pick first centroid randomly:** For each subsequent centroid, pick point with probability proportional to squared distance from nearest existing centroid
+3. **Step 3:** **REPEAT** until convergence:
+    - **Step 3a: Assignment Step**
+        - For each data point:
+            - Calculate distance to all K centroids
+            - Distance formula: `d = √[(x₁-c₁)² + (x₂-c₂)² + ...]`
+            - Assign point to cluster with nearest centroid
+    - **Step 3b: Update Step**
+        - For each cluster k:
+            - Calculate new centroid as mean of all points in cluster
+            - New centroid coordinates = `(Σxᵢ/n, Σyᵢ/n, ...)`
+    - **Step 3c: Check Convergence**
+        - If centroids haven't moved (or moved less than threshold) → **STOP**
+        - If maximum iterations reached → **STOP**
+        - Otherwise → Continue to Step 3a
+4. **Step 4:** Output final cluster assignments and centroid positions
