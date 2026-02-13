@@ -383,7 +383,7 @@
           <li>The algorithm performs poorly with non-spherical clusters, varying cluster sizes, and is highly sensitive to outliers.</li>
           </ul>
           <h3 id="6-algorithm">6. Algorithm</h3>
-          <ol>
+          <ul>
           <li><strong>Step 1:</strong> Choose K (number of clusters)</li>
           <li><strong>Step 2:</strong> Initialize K centroids:<ul>
           <li><strong>Random:</strong> Pick K random data points as initial centroids</li>
@@ -391,7 +391,7 @@
           </ul>
           </li>
           <li><strong>Step 3:</strong> <strong>REPEAT</strong> until convergence:<ul>
-          <li><strong>Step 3a: Assignment Step</strong><ul>
+          <li><strong>Step 3a:</strong> Assignment Step<ul>
           <li>For each data point:<ul>
           <li>Calculate distance to all K centroids</li>
           <li>Distance formula: <code>d = √[(x₁-c₁)² + (x₂-c₂)² + ...]</code></li>
@@ -400,7 +400,7 @@
           </li>
           </ul>
           </li>
-          <li><strong>Step 3b: Update Step</strong><ul>
+          <li><strong>Step 3b:</strong> Update Step<ul>
           <li>For each cluster k:<ul>
           <li>Calculate new centroid as mean of all points in cluster</li>
           <li>New centroid coordinates = <code>(Σxᵢ/n, Σyᵢ/n, ...)</code></li>
@@ -408,16 +408,16 @@
           </li>
           </ul>
           </li>
-          <li><strong>Step 3c: Check Convergence</strong><ul>
-          <li>If centroids haven't moved (or moved less than threshold) → <strong>STOP</strong></li>
-          <li>If maximum iterations reached → <strong>STOP</strong></li>
-          <li>Otherwise → Continue to Step 3a</li>
+          <li><strong>Step 3c:</strong> Check Convergence<ul>
+          <li>If centroids haven't moved (or moved less than threshold) then <strong>STOP</strong></li>
+          <li>If maximum iterations reached then <strong>STOP</strong></li>
+          <li>Otherwise, repeat from Step 3a</li>
           </ul>
           </li>
           </ul>
           </li>
           <li><strong>Step 4:</strong> Output final cluster assignments and centroid positions</li>
-          </ol>
+          </ul>
           
           </div>
           <div class="bug-report-mobile">
