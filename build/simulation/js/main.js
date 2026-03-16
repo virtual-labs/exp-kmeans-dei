@@ -494,7 +494,7 @@ function renderSidebar() {
   `;
   downloadBtn.style.textAlign = 'center';
   downloadBtn.style.marginTop = "10px";
-  
+
   // Check if all steps are completed (or were completed before a restart)
   const allCompleted = checkAllStepsCompleted() || hasCompletedOnce;
   if (allCompleted) {
@@ -1056,8 +1056,8 @@ function highlightCode(code) {
 
 function downloadPDF() {
   const link = document.createElement('a');
-  link.href = './Experiment-09pdf.pdf';
-  link.download = 'Experiment-09pdf.pdf';
+  link.href = './Experiment-09.pdf';
+  link.download = 'Experiment-09.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
