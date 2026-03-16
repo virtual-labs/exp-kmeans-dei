@@ -2,171 +2,171 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Silhouette score between 0.5 to 1.0 indicates",
+      "question": "What does a Silhouette score close to 1 indicate about clustering quality?",
       "answers": {
-        "a": "Excellent clustering",
-        "b": "Good clustering",
-        "c": "Poor clustering",
-        "d": "Weak / Overlapping clusters"
+        "a": "Data points are assigned to incorrect clusters",
+        "b": "Clusters are compact and well separated",
+        "c": "Clusters overlap heavily",
+        "d": "All clusters contain equal number of samples"
       },
       "explanations": {
-        "a": "Values close to 1 indicate well-separated and compact clusters.",
-        "b": "Good clustering usually lies around 0.3 to 0.5.",
-        "c": "Poor clustering gives silhouette values near 0.",
-        "d": "Overlapping clusters give low or negative scores."
+        "a": "Incorrect cluster assignment lowers the silhouette score.",
+        "b": "A value close to 1 means samples are closer to their own cluster than to neighboring clusters.",
+        "c": "Overlapping clusters produce values near 0.",
+        "d": "Cluster size equality is not measured by silhouette score."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does the Davies–Bouldin score measure in clustering evaluation?",
+      "answers": {
+        "a": "Trade-off between cluster compactness and separation",
+        "b": "Number of clusters formed",
+        "c": "Only similarity between cluster centroids",
+        "d": "Classification accuracy of clusters"
+      },
+      "explanations": {
+        "a": "The DB index evaluates intra-cluster similarity and inter-cluster separation.",
+        "b": "The number of clusters is defined by the algorithm parameter.",
+        "c": "It considers both centroid distance and cluster spread.",
+        "d": "Clustering is unsupervised so accuracy is not used."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "What is the purpose of Davies-Bouldin score",
+      "question": "If a new feature highly correlated with an existing feature is added to K-Means clustering, what is the most likely outcome?",
       "answers": {
-        "a": "Indicates non-overlapped clusters",
-        "b": "Only measures the similarity",
-        "c": "Indicates compactness and well-separated clusters",
-        "d": "Measures cohesion of clusters"
+        "a": "Clustering performance always improves",
+        "b": "Cluster centroids become identical",
+        "c": "The feature may add redundancy without improving cluster quality",
+        "d": "WCSS automatically becomes zero"
       },
       "explanations": {
-        "a": "This is an indirect effect, not the main purpose.",
-        "b": "It measures more than similarity; it evaluates clustering quality.",
-        "c": "Davies-Bouldin score evaluates cluster compactness and separation.",
-        "d": "Cohesion alone is not sufficient without separation."
+        "a": "Additional features do not always improve clustering.",
+        "b": "Centroids rarely become identical due to correlation.",
+        "c": "Redundant features may not provide new information.",
+        "d": "WCSS cannot become zero unless all points equal centroids."
       },
       "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "difficulty": "beginner"
     },
     {
-      "question": "If we take age feature also, the clustering will be",
+      "question": "What does a lower Davies–Bouldin score indicate?",
       "answers": {
-        "a": "Poor",
-        "b": "Good",
-        "c": "Remains same",
-        "d": "Overlapping"
+        "a": "Poor clustering with overlapping clusters",
+        "b": "Better clustering with compact and well-separated clusters",
+        "c": "Larger cluster variance",
+        "d": "Increased number of clusters"
       },
       "explanations": {
-        "a": "Adding irrelevant features can reduce clustering quality.",
-        "b": "Additional features do not always improve clustering.",
-        "c": "New features usually affect distance calculations.",
-        "d": "Poor feature choice may cause overlap."
-      },
-      "correctAnswer": "a",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "Davies-Bouldin score less than 1 indicates",
-      "answers": {
-        "a": "Poor clustering",
-        "b": "Acceptable",
-        "c": "Good clustering",
-        "d": "Excellent clustering"
-      },
-      "explanations": {
-        "a": "Poor clustering produces higher DB scores.",
-        "b": "DB score below 1 indicates acceptable clustering quality.",
-        "c": "Good clustering usually has much lower DB values.",
-        "d": "Excellent clustering has DB values close to 0."
+        "a": "Overlapping clusters increase the DB score.",
+        "b": "Lower values mean clusters are compact and far apart.",
+        "c": "High variance worsens the score.",
+        "d": "DB score measures cluster quality, not cluster count."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
-      "question": "Calinski-Harabasz score ranges between",
+      "question": "The Calinski–Harabasz index evaluates clustering based on which principle?",
       "answers": {
-        "a": "1 to 100",
-        "b": "0 to 50",
-        "c": "-1 to ∞",
-        "d": "0 to ∞"
+        "a": "Ratio of between-cluster variance to within-cluster variance",
+        "b": "Total number of clusters formed",
+        "c": "Average silhouette distance",
+        "d": "Density of each cluster"
       },
       "explanations": {
-        "a": "CH score is not bounded to this range.",
-        "b": "No fixed upper limit exists.",
-        "c": "CH score is never negative.",
-        "d": "CH score starts from 0 and can increase infinitely."
-      },
-      "correctAnswer": "d",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "K-means is used to minimize",
-      "answers": {
-        "a": "WCSS",
-        "b": "Silhouette score",
-        "c": "Davies-Bouldin score",
-        "d": "Calinski-Harabasz score"
-      },
-      "explanations": {
-        "a": "K-means minimizes within-cluster sum of squares.",
-        "b": "Silhouette score should be maximized.",
-        "c": "DB score is evaluated, not minimized by algorithm directly.",
-        "d": "CH score is maximized, not minimized."
+        "a": "A higher ratio indicates well-separated clusters.",
+        "b": "CH score does not determine cluster count.",
+        "c": "Silhouette score is a separate metric.",
+        "d": "Density is not directly used."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "Why we did feature scaling",
+      "question": "Why does K-Means minimize the Within-Cluster Sum of Squares (WCSS)?",
       "answers": {
-        "a": "To reduce overfitting",
-        "b": "For better evaluation",
-        "c": "Prevent features with large value to dominate and Equal contribution of each feature",
-        "d": "To reduce dataset size"
+        "a": "To maximize cluster overlap",
+        "b": "To keep points close to their cluster centroids",
+        "c": "To reduce dataset size",
+        "d": "To eliminate outliers automatically"
       },
       "explanations": {
-        "a": "Scaling does not directly reduce overfitting.",
-        "b": "Evaluation metrics do not require scaling.",
-        "c": "Scaling ensures fair distance contribution from all features.",
-        "d": "Scaling does not reduce data size."
+        "a": "K-Means tries to reduce overlap.",
+        "b": "Minimizing WCSS ensures compact clusters.",
+        "c": "Dataset size is unrelated.",
+        "d": "K-Means does not specifically remove outliers."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "The elbow point represents",
+      "question": "Why is feature scaling important before applying K-Means clustering?",
       "answers": {
-        "a": "Minimum WCSS",
-        "b": "High CH score",
-        "c": "Point where WCSS reduction slows down",
-        "d": "Lower index"
+        "a": "It reduces the number of clusters",
+        "b": "It prevents features with larger ranges from dominating distance calculations",
+        "c": "It removes redundant features automatically",
+        "d": "It increases silhouette score directly"
       },
       "explanations": {
-        "a": "WCSS keeps decreasing with increasing K.",
-        "b": "CH score is a separate metric.",
-        "c": "Elbow indicates diminishing returns with increasing clusters.",
-        "d": "Index has no relation here."
+        "a": "Cluster number is user defined.",
+        "b": "K-Means uses distance metrics sensitive to feature magnitude.",
+        "c": "Scaling does not remove redundancy.",
+        "d": "Scaling may improve clustering but does not guarantee higher silhouette score."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In the Elbow Method, what does the “elbow point” represent?",
+      "answers": {
+        "a": "The minimum possible WCSS",
+        "b": "The point where adding more clusters gives diminishing improvement",
+        "c": "The point where clusters become overlapping",
+        "d": "The maximum silhouette score"
+      },
+      "explanations": {
+        "a": "WCSS keeps decreasing as clusters increase.",
+        "b": "The elbow indicates the optimal trade-off between cluster count and compactness.",
+        "c": "Overlap is unrelated to the elbow concept.",
+        "d": "Elbow method uses WCSS, not silhouette score."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which evaluation metric behavior typically indicates overlapping clusters?",
+      "answers": {
+        "a": "High Silhouette score",
+        "b": "Low Davies–Bouldin score",
+        "c": "Low Silhouette score",
+        "d": "High Calinski–Harabasz score"
+      },
+      "explanations": {
+        "a": "High silhouette score indicates good separation.",
+        "b": "Low DB score indicates good clustering.",
+        "c": "Overlapping clusters reduce silhouette score.",
+        "d": "High CH score suggests well-separated clusters."
       },
       "correctAnswer": "c",
       "difficulty": "intermediate"
     },
     {
-      "question": "Overlapping clusters will give",
+      "question": "Why is K-Means classified as an unsupervised learning algorithm?",
       "answers": {
-        "a": "Poor Silhouette score",
-        "b": "Low Davies-Bouldin score",
-        "c": "High CH score",
-        "d": "High WCSS"
+        "a": "It automatically selects the best number of clusters",
+        "b": "It does not require labeled training data",
+        "c": "It always finds the global optimal clusters",
+        "d": "It only works with categorical features"
       },
       "explanations": {
-        "a": "Overlapping clusters reduce silhouette values.",
-        "b": "Overlap increases DB score.",
-        "c": "CH score decreases with overlap.",
-        "d": "WCSS alone does not indicate overlap directly."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "K-means is unsupervised because",
-      "answers": {
-        "a": "It has no hyperparameters",
-        "b": "It doesn’t require labelled data",
-        "c": "It finds optimal clusters",
-        "d": "It works on numeric data"
-      },
-      "explanations": {
-        "a": "K is a hyperparameter in K-means.",
-        "b": "K-means works without labeled outputs.",
-        "c": "Finding clusters does not define supervision.",
-        "d": "Data type does not define learning type."
+        "a": "The number of clusters must usually be specified.",
+        "b": "Unsupervised learning works without labeled outputs.",
+        "c": "K-Means may converge to local optima.",
+        "d": "It primarily works with numerical features."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"

@@ -2,21 +2,21 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Clustering K-Means Algorithm falls under which type of machine learning",
+      "question": "Which objective function does the K-Means algorithm minimize during clustering",
       "answers": {
-        "a": "Supervised Learning",
-        "b": "Unsupervised Learning",
-        "c": "Reinforcement Learning",
-        "d": "None of above"
+        "a": "Sum of absolute distances",
+        "b": "Within-cluster sum of squared distances (WCSS)",
+        "c": "Maximum inter-cluster distance",
+        "d": "Mean absolute error"
       },
       "explanations": {
-        "a": "Supervised learning requires labeled data, which K-means does not use.",
-        "b": "K-means groups data without predefined labels.",
-        "c": "Reinforcement learning is based on rewards, not clustering.",
-        "d": "K-means clearly belongs to unsupervised learning."
+        "a": "K-Means does not minimize absolute distances.",
+        "b": "K-Means minimizes the sum of squared distances between data points and their respective centroids.",
+        "c": "Inter-cluster distance maximization is not the primary objective of K-Means.",
+        "d": "Mean absolute error is used in regression problems."
       },
       "correctAnswer": "b",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
     },
     {
       "question": "Which method is used to find optimal number of clusters in a dataset",
@@ -27,16 +27,16 @@
         "d": "None of the above"
       },
       "explanations": {
-        "a": "Dunn index evaluates cluster quality, not directly optimal K.",
-        "b": "Silhouette measures clustering quality but not primarily used for K selection.",
-        "c": "Elbow method identifies optimal K by observing inertia reduction.",
-        "d": "Elbow method is a standard approach."
+        "a": "Dunn index measures cluster validity but is not commonly used for selecting K directly.",
+        "b": "Silhouette method evaluates clustering quality but the elbow method is typically used to determine K visually.",
+        "c": "Elbow method plots WCSS against K and selects the elbow point as optimal clusters.",
+        "d": "Since the elbow method is used, this option is incorrect."
       },
       "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "difficulty": "beginner"
     },
     {
-      "question": "Centroids are on perfect position",
+      "question": "Centroids reach their final stable position after",
       "answers": {
         "a": "2 iterations",
         "b": "5 iterations",
@@ -44,16 +44,16 @@
         "d": "Depends on dataset and initialization"
       },
       "explanations": {
-        "a": "No fixed number of iterations guarantees convergence.",
-        "b": "Convergence is not fixed to 5 iterations.",
-        "c": "Iteration count varies by dataset.",
-        "d": "Centroid convergence depends on data distribution and initial values."
+        "a": "Convergence is not guaranteed in exactly 2 iterations.",
+        "b": "Different datasets may require different iterations.",
+        "c": "Four iterations cannot be generalized for all datasets.",
+        "d": "The number of iterations depends on the dataset structure and initial centroid selection."
       },
       "correctAnswer": "d",
       "difficulty": "intermediate"
     },
     {
-      "question": "The distance of a point in cluster to another point in a cluster is",
+      "question": "The distance of a point in a cluster to another point in the same cluster is generally",
       "answers": {
         "a": "Greater than its own cluster points",
         "b": "Lesser than its own cluster points",
@@ -61,16 +61,16 @@
         "d": "None of above"
       },
       "explanations": {
-        "a": "Points inside the same cluster are closer to each other than to other clusters.",
-        "b": "This contradicts cluster compactness.",
-        "c": "Distances are rarely equal in real data.",
-        "d": "Cluster points are closer within the same cluster."
+        "a": "Points in different clusters usually have larger distances.",
+        "b": "Points within the same cluster tend to be closer to each other.",
+        "c": "Distances are rarely exactly equal.",
+        "d": "Since points are usually closer within the cluster, this is incorrect."
       },
-      "correctAnswer": "a",
-      "difficulty": "intermediate"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     },
     {
-      "question": "The k-means clustering algorithm is an",
+      "question": "The K-Means clustering algorithm is an",
       "answers": {
         "a": "Convergence process",
         "b": "Iterative process",
@@ -78,16 +78,16 @@
         "d": "None of above"
       },
       "explanations": {
-        "a": "Convergence is the goal, not the nature of the process.",
-        "b": "K-means repeatedly updates centroids until convergence.",
-        "c": "K-means does not diverge.",
-        "d": "It is an iterative optimization process."
+        "a": "Although it converges, the core mechanism is iterative updates.",
+        "b": "K-Means repeatedly assigns clusters and updates centroids until convergence.",
+        "c": "The algorithm does not diverge.",
+        "d": "Since it is iterative, this option is incorrect."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "If clusters are overlapped, this indicates",
+      "question": "If clusters are highly overlapped, this indicates",
       "answers": {
         "a": "Poor clustering",
         "b": "Good clustering",
@@ -95,16 +95,16 @@
         "d": "None of above"
       },
       "explanations": {
-        "a": "Overlapping clusters show weak separation.",
-        "b": "Good clustering has well-separated clusters.",
-        "c": "Overlap indicates low-quality clustering.",
-        "d": "Overlap means clusters are not clearly formed."
+        "a": "Overlapping clusters mean that the separation between groups is weak.",
+        "b": "Good clustering should have clearly separated groups.",
+        "c": "Overlap indicates low clustering quality rather than average quality.",
+        "d": "Since overlapping means poor clustering, this option is incorrect."
       },
       "correctAnswer": "a",
       "difficulty": "intermediate"
     },
     {
-      "question": "Clusters formation based on",
+      "question": "Clusters in K-Means are formed primarily based on",
       "answers": {
         "a": "Probability",
         "b": "Similarity in distance",
@@ -112,33 +112,33 @@
         "d": "Class labels"
       },
       "explanations": {
-        "a": "Probability-based clustering is used in GMMs, not K-means.",
-        "b": "K-means groups points based on distance similarity.",
-        "c": "Density-based clustering is used in DBSCAN.",
-        "d": "K-means does not use labels."
+        "a": "K-Means does not use probability distributions.",
+        "b": "Data points are grouped based on minimum distance to centroids.",
+        "c": "Density-based clustering is used in algorithms like DBSCAN.",
+        "d": "Class labels are used in supervised learning, not clustering."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "What does a centroid represent",
+      "question": "What will most likely happen if the initial centroids are chosen poorly in K-Means",
       "answers": {
-        "a": "Farthest point of a cluster",
-        "b": "Median of all points",
-        "c": "Mean Position of cluster points",
-        "d": "None of above"
+        "a": "Algorithm always finds the global optimum",
+        "b": "Algorithm may converge to a local optimum",
+        "c": "Clusters become identical",
+        "d": "Algorithm will not converge"
       },
       "explanations": {
-        "a": "Centroid is not the farthest point.",
-        "b": "K-means uses mean, not median.",
-        "c": "Centroid is the average of all points in the cluster.",
-        "d": "Mean position defines centroid."
+        "a": "K-Means does not guarantee a global optimum.",
+        "b": "Poor initialization can cause the algorithm to settle in a local optimum.",
+        "c": "Clusters generally do not become identical.",
+        "d": "The algorithm still converges but may produce suboptimal clusters."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "If we skip feature scaling, which one will dominate",
+      "question": "If we skip feature scaling, which feature will dominate clustering",
       "answers": {
         "a": "Feature with more variance",
         "b": "Feature with missing values",
@@ -146,30 +146,30 @@
         "d": "Feature with smaller values"
       },
       "explanations": {
-        "a": "Larger-scale features dominate distance calculations.",
-        "b": "Missing values do not dominate distances.",
-        "c": "Categorical values require encoding.",
-        "d": "Smaller values have less impact."
+        "a": "Features with larger ranges or variance dominate distance calculations.",
+        "b": "Missing values do not dominate clustering.",
+        "c": "Categorical values are not used directly in K-Means.",
+        "d": "Smaller values have less influence on distance calculations."
       },
       "correctAnswer": "a",
       "difficulty": "intermediate"
     },
     {
-      "question": "Which distance metric is used in K-means algorithm",
+      "question": "Why is K-Means not suitable for clusters with complex shapes",
       "answers": {
-        "a": "Hamming distance",
-        "b": "Euclidean distance",
-        "c": "Manhattan distance",
-        "d": "Cosine similarity"
+        "a": "Because it assumes clusters are spherical around centroids",
+        "b": "Because it cannot compute distances",
+        "c": "Because it requires labeled data",
+        "d": "Because it cannot handle numerical data"
       },
       "explanations": {
-        "a": "Hamming distance is for categorical or binary data.",
-        "b": "K-means minimizes Euclidean distance to centroids.",
-        "c": "Manhattan distance is used in K-medians.",
-        "d": "Cosine similarity measures angle, not distance."
+        "a": "K-Means assumes clusters are roughly spherical and evenly sized.",
+        "b": "Distance computation is the core of K-Means.",
+        "c": "K-Means works with unlabeled data.",
+        "d": "K-Means primarily works with numerical data."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
     }
   ]
 }

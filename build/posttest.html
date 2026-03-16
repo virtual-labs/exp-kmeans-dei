@@ -349,434 +349,434 @@
                         </div>
                     </div>
                 </div>
-          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
-            <div class="text-center fix-spacing">
-              <h2 id="clustering-k-means-algorithm">Clustering: K-Means Algorithm</h2>
+          </div>            <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+              <div class="text-center fix-spacing">
+                <h2 id="clustering-k-means-algorithm">Clustering: K-Means Algorithm</h2>
           
+              </div>
+              <div id="difficulty-container" style="border-bottom: 1px solid #eaecef; padding-bottom: .3em; margin: 0" class="row">
+                <div id="difficulty-label" class="col-12 col-md-3" style="display:none"><strong>Choose difficulty: </strong></div>
+                <div class="form-check col-12 col-md-3" style="display:none">
+                  <input id="beginner" type="checkbox" value="">
+                  <label class="form-check-label" for="beginner">
+                    <strong>Beginner</strong>
+                  </label>
+                </div>
+                <div class="form-check col-12 col-md-3" style="display:none">
+                  <input id="intermediate" type="checkbox" value="">
+                  <label class="form-check-label" for="intermediate">
+                    <strong>Intermediate</strong>
+                  </label>
+                </div>
+                <div class="form-check col-12 col-md-3" style="display:none">
+                  <input id="advanced" type="checkbox" value="">
+                  <label class="form-check-label" for="advanced">
+                    <strong>Advanced</strong>
+                  </label>
+                </div>
+              </div>
+          
+              <div id="quiz" class="versiontrue" style="margin-top: 1rem">
+          
+          
+                <div class="question beginner">
+                  What does a Silhouette score close to 1 indicate about clustering quality?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer0a">
+                    <label>
+                      <input type="radio" name="question0" value="a">
+                      a: Data points are assigned to incorrect clusters
+                    </label>
+                    <a href="#" id="explanation0a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer0b">
+                    <label>
+                      <input type="radio" name="question0" value="b">
+                      b: Clusters are compact and well separated
+                    </label>
+                    <a href="#" id="explanation0b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer0c">
+                    <label>
+                      <input type="radio" name="question0" value="c">
+                      c: Clusters overlap heavily
+                    </label>
+                    <a href="#" id="explanation0c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer0d">
+                    <label>
+                      <input type="radio" name="question0" value="d">
+                      d: All clusters contain equal number of samples
+                    </label>
+                    <a href="#" id="explanation0d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  What does the Davies–Bouldin score measure in clustering evaluation?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer1a">
+                    <label>
+                      <input type="radio" name="question1" value="a">
+                      a: Trade-off between cluster compactness and separation
+                    </label>
+                    <a href="#" id="explanation1a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer1b">
+                    <label>
+                      <input type="radio" name="question1" value="b">
+                      b: Number of clusters formed
+                    </label>
+                    <a href="#" id="explanation1b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer1c">
+                    <label>
+                      <input type="radio" name="question1" value="c">
+                      c: Only similarity between cluster centroids
+                    </label>
+                    <a href="#" id="explanation1c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer1d">
+                    <label>
+                      <input type="radio" name="question1" value="d">
+                      d: Classification accuracy of clusters
+                    </label>
+                    <a href="#" id="explanation1d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  If a new feature highly correlated with an existing feature is added to K-Means clustering, what is the most likely outcome?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer2a">
+                    <label>
+                      <input type="radio" name="question2" value="a">
+                      a: Clustering performance always improves
+                    </label>
+                    <a href="#" id="explanation2a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer2b">
+                    <label>
+                      <input type="radio" name="question2" value="b">
+                      b: Cluster centroids become identical
+                    </label>
+                    <a href="#" id="explanation2b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer2c">
+                    <label>
+                      <input type="radio" name="question2" value="c">
+                      c: The feature may add redundancy without improving cluster quality
+                    </label>
+                    <a href="#" id="explanation2c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer2d">
+                    <label>
+                      <input type="radio" name="question2" value="d">
+                      d: WCSS automatically becomes zero
+                    </label>
+                    <a href="#" id="explanation2d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  What does a lower Davies–Bouldin score indicate?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer3a">
+                    <label>
+                      <input type="radio" name="question3" value="a">
+                      a: Poor clustering with overlapping clusters
+                    </label>
+                    <a href="#" id="explanation3a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3b">
+                    <label>
+                      <input type="radio" name="question3" value="b">
+                      b: Better clustering with compact and well-separated clusters
+                    </label>
+                    <a href="#" id="explanation3b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3c">
+                    <label>
+                      <input type="radio" name="question3" value="c">
+                      c: Larger cluster variance
+                    </label>
+                    <a href="#" id="explanation3c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3d">
+                    <label>
+                      <input type="radio" name="question3" value="d">
+                      d: Increased number of clusters
+                    </label>
+                    <a href="#" id="explanation3d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  The Calinski–Harabasz index evaluates clustering based on which principle?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer4a">
+                    <label>
+                      <input type="radio" name="question4" value="a">
+                      a: Ratio of between-cluster variance to within-cluster variance
+                    </label>
+                    <a href="#" id="explanation4a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4b">
+                    <label>
+                      <input type="radio" name="question4" value="b">
+                      b: Total number of clusters formed
+                    </label>
+                    <a href="#" id="explanation4b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4c">
+                    <label>
+                      <input type="radio" name="question4" value="c">
+                      c: Average silhouette distance
+                    </label>
+                    <a href="#" id="explanation4c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4d">
+                    <label>
+                      <input type="radio" name="question4" value="d">
+                      d: Density of each cluster
+                    </label>
+                    <a href="#" id="explanation4d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  Why does K-Means minimize the Within-Cluster Sum of Squares (WCSS)?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer5a">
+                    <label>
+                      <input type="radio" name="question5" value="a">
+                      a: To maximize cluster overlap
+                    </label>
+                    <a href="#" id="explanation5a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5b">
+                    <label>
+                      <input type="radio" name="question5" value="b">
+                      b: To keep points close to their cluster centroids
+                    </label>
+                    <a href="#" id="explanation5b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5c">
+                    <label>
+                      <input type="radio" name="question5" value="c">
+                      c: To reduce dataset size
+                    </label>
+                    <a href="#" id="explanation5c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5d">
+                    <label>
+                      <input type="radio" name="question5" value="d">
+                      d: To eliminate outliers automatically
+                    </label>
+                    <a href="#" id="explanation5d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  Why is feature scaling important before applying K-Means clustering?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer6a">
+                    <label>
+                      <input type="radio" name="question6" value="a">
+                      a: It reduces the number of clusters
+                    </label>
+                    <a href="#" id="explanation6a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6b">
+                    <label>
+                      <input type="radio" name="question6" value="b">
+                      b: It prevents features with larger ranges from dominating distance calculations
+                    </label>
+                    <a href="#" id="explanation6b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6c">
+                    <label>
+                      <input type="radio" name="question6" value="c">
+                      c: It removes redundant features automatically
+                    </label>
+                    <a href="#" id="explanation6c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6d">
+                    <label>
+                      <input type="radio" name="question6" value="d">
+                      d: It increases silhouette score directly
+                    </label>
+                    <a href="#" id="explanation6d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  In the Elbow Method, what does the “elbow point” represent?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer7a">
+                    <label>
+                      <input type="radio" name="question7" value="a">
+                      a: The minimum possible WCSS
+                    </label>
+                    <a href="#" id="explanation7a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7b">
+                    <label>
+                      <input type="radio" name="question7" value="b">
+                      b: The point where adding more clusters gives diminishing improvement
+                    </label>
+                    <a href="#" id="explanation7b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7c">
+                    <label>
+                      <input type="radio" name="question7" value="c">
+                      c: The point where clusters become overlapping
+                    </label>
+                    <a href="#" id="explanation7c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7d">
+                    <label>
+                      <input type="radio" name="question7" value="d">
+                      d: The maximum silhouette score
+                    </label>
+                    <a href="#" id="explanation7d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  Which evaluation metric behavior typically indicates overlapping clusters?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer8a">
+                    <label>
+                      <input type="radio" name="question8" value="a">
+                      a: High Silhouette score
+                    </label>
+                    <a href="#" id="explanation8a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer8b">
+                    <label>
+                      <input type="radio" name="question8" value="b">
+                      b: Low Davies–Bouldin score
+                    </label>
+                    <a href="#" id="explanation8b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer8c">
+                    <label>
+                      <input type="radio" name="question8" value="c">
+                      c: Low Silhouette score
+                    </label>
+                    <a href="#" id="explanation8c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer8d">
+                    <label>
+                      <input type="radio" name="question8" value="d">
+                      d: High Calinski–Harabasz score
+                    </label>
+                    <a href="#" id="explanation8d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  Why is K-Means classified as an unsupervised learning algorithm?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer9a">
+                    <label>
+                      <input type="radio" name="question9" value="a">
+                      a: It automatically selects the best number of clusters
+                    </label>
+                    <a href="#" id="explanation9a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer9b">
+                    <label>
+                      <input type="radio" name="question9" value="b">
+                      b: It does not require labeled training data
+                    </label>
+                    <a href="#" id="explanation9b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer9c">
+                    <label>
+                      <input type="radio" name="question9" value="c">
+                      c: It always finds the global optimal clusters
+                    </label>
+                    <a href="#" id="explanation9c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer9d">
+                    <label>
+                      <input type="radio" name="question9" value="d">
+                      d: It only works with categorical features
+                    </label>
+                    <a href="#" id="explanation9d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+              </div>
+              <button id="submit" class="btn btn-primary">Submit Quiz</button>
+              <div id="results"></div>
             </div>
-                  <div id="difficulty-container" style="border-bottom: 1px solid #eaecef; padding-bottom: .3em; margin: 0" class="row">
-                    <div id="difficulty-label" class="col-12 col-md-3" style="display:none"><strong>Choose difficulty: </strong></div>
-                    <div class="form-check col-12 col-md-3" style="display:none">
-                      <input id="beginner" type="checkbox" value="">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <strong>Beginner</strong>
-                      </label>
-                    </div>
-                    <div class="form-check col-12 col-md-3" style="display:none">
-                      <input id="intermediate" type="checkbox" value="">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <strong>Intermediate</strong>
-                      </label>
-                    </div>
-                    <div class="form-check col-12 col-md-3" style="display:none">
-                      <input id="advanced" type="checkbox" value="">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <strong>Advanced</strong>
-                      </label>
-                    </div>
-                  </div>
-                  
-                  <div id="quiz" class="versiontrue" style="margin-top: 1rem">
-                
-                
-                  <div class="question beginner">
-                    Silhouette score between 0.5 to 1.0 indicates
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer0a">
-                      <label>
-                        <input type="radio" name="question0" value="a">
-                        a: Excellent clustering
-                      </label>
-                      <a href="#" id="explanation0a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer0b">
-                      <label>
-                        <input type="radio" name="question0" value="b">
-                        b: Good clustering
-                      </label>
-                      <a href="#" id="explanation0b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer0c">
-                      <label>
-                        <input type="radio" name="question0" value="c">
-                        c: Poor clustering
-                      </label>
-                      <a href="#" id="explanation0c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer0d">
-                      <label>
-                        <input type="radio" name="question0" value="d">
-                        d: Weak / Overlapping clusters
-                      </label>
-                      <a href="#" id="explanation0d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question intermediate">
-                    What is the purpose of Davies-Bouldin score
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer1a">
-                      <label>
-                        <input type="radio" name="question1" value="a">
-                        a: Indicates non-overlapped clusters
-                      </label>
-                      <a href="#" id="explanation1a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer1b">
-                      <label>
-                        <input type="radio" name="question1" value="b">
-                        b: Only measures the similarity
-                      </label>
-                      <a href="#" id="explanation1b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer1c">
-                      <label>
-                        <input type="radio" name="question1" value="c">
-                        c: Indicates compactness and well-separated clusters
-                      </label>
-                      <a href="#" id="explanation1c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer1d">
-                      <label>
-                        <input type="radio" name="question1" value="d">
-                        d: Measures cohesion of clusters
-                      </label>
-                      <a href="#" id="explanation1d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question intermediate">
-                    If we take age feature also, the clustering will be
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer2a">
-                      <label>
-                        <input type="radio" name="question2" value="a">
-                        a: Poor
-                      </label>
-                      <a href="#" id="explanation2a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer2b">
-                      <label>
-                        <input type="radio" name="question2" value="b">
-                        b: Good
-                      </label>
-                      <a href="#" id="explanation2b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer2c">
-                      <label>
-                        <input type="radio" name="question2" value="c">
-                        c: Remains same
-                      </label>
-                      <a href="#" id="explanation2c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer2d">
-                      <label>
-                        <input type="radio" name="question2" value="d">
-                        d: Overlapping
-                      </label>
-                      <a href="#" id="explanation2d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question intermediate">
-                    Davies-Bouldin score less than 1 indicates
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer3a">
-                      <label>
-                        <input type="radio" name="question3" value="a">
-                        a: Poor clustering
-                      </label>
-                      <a href="#" id="explanation3a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer3b">
-                      <label>
-                        <input type="radio" name="question3" value="b">
-                        b: Acceptable
-                      </label>
-                      <a href="#" id="explanation3b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer3c">
-                      <label>
-                        <input type="radio" name="question3" value="c">
-                        c: Good clustering
-                      </label>
-                      <a href="#" id="explanation3c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer3d">
-                      <label>
-                        <input type="radio" name="question3" value="d">
-                        d: Excellent clustering
-                      </label>
-                      <a href="#" id="explanation3d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question intermediate">
-                    Calinski-Harabasz score ranges between
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer4a">
-                      <label>
-                        <input type="radio" name="question4" value="a">
-                        a: 1 to 100
-                      </label>
-                      <a href="#" id="explanation4a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer4b">
-                      <label>
-                        <input type="radio" name="question4" value="b">
-                        b: 0 to 50
-                      </label>
-                      <a href="#" id="explanation4b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer4c">
-                      <label>
-                        <input type="radio" name="question4" value="c">
-                        c: -1 to ∞
-                      </label>
-                      <a href="#" id="explanation4c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer4d">
-                      <label>
-                        <input type="radio" name="question4" value="d">
-                        d: 0 to ∞
-                      </label>
-                      <a href="#" id="explanation4d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question beginner">
-                    K-means is used to minimize
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer5a">
-                      <label>
-                        <input type="radio" name="question5" value="a">
-                        a: WCSS
-                      </label>
-                      <a href="#" id="explanation5a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer5b">
-                      <label>
-                        <input type="radio" name="question5" value="b">
-                        b: Silhouette score
-                      </label>
-                      <a href="#" id="explanation5b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer5c">
-                      <label>
-                        <input type="radio" name="question5" value="c">
-                        c: Davies-Bouldin score
-                      </label>
-                      <a href="#" id="explanation5c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer5d">
-                      <label>
-                        <input type="radio" name="question5" value="d">
-                        d: Calinski-Harabasz score
-                      </label>
-                      <a href="#" id="explanation5d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question beginner">
-                    Why we did feature scaling
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer6a">
-                      <label>
-                        <input type="radio" name="question6" value="a">
-                        a: To reduce overfitting
-                      </label>
-                      <a href="#" id="explanation6a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer6b">
-                      <label>
-                        <input type="radio" name="question6" value="b">
-                        b: For better evaluation
-                      </label>
-                      <a href="#" id="explanation6b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer6c">
-                      <label>
-                        <input type="radio" name="question6" value="c">
-                        c: Prevent features with large value to dominate and Equal contribution of each feature
-                      </label>
-                      <a href="#" id="explanation6c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer6d">
-                      <label>
-                        <input type="radio" name="question6" value="d">
-                        d: To reduce dataset size
-                      </label>
-                      <a href="#" id="explanation6d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question intermediate">
-                    The elbow point represents
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer7a">
-                      <label>
-                        <input type="radio" name="question7" value="a">
-                        a: Minimum WCSS
-                      </label>
-                      <a href="#" id="explanation7a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer7b">
-                      <label>
-                        <input type="radio" name="question7" value="b">
-                        b: High CH score
-                      </label>
-                      <a href="#" id="explanation7b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer7c">
-                      <label>
-                        <input type="radio" name="question7" value="c">
-                        c: Point where WCSS reduction slows down
-                      </label>
-                      <a href="#" id="explanation7c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer7d">
-                      <label>
-                        <input type="radio" name="question7" value="d">
-                        d: Lower index
-                      </label>
-                      <a href="#" id="explanation7d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question beginner">
-                    Overlapping clusters will give
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer8a">
-                      <label>
-                        <input type="radio" name="question8" value="a">
-                        a: Poor Silhouette score
-                      </label>
-                      <a href="#" id="explanation8a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer8b">
-                      <label>
-                        <input type="radio" name="question8" value="b">
-                        b: Low Davies-Bouldin score
-                      </label>
-                      <a href="#" id="explanation8b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer8c">
-                      <label>
-                        <input type="radio" name="question8" value="c">
-                        c: High CH score
-                      </label>
-                      <a href="#" id="explanation8c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer8d">
-                      <label>
-                        <input type="radio" name="question8" value="d">
-                        d: High WCSS
-                      </label>
-                      <a href="#" id="explanation8d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-                
-                  <div class="question beginner">
-                    K-means is unsupervised because
-                  </div>
-                  
-                  <div class="answers">
-                    <div id="answer9a">
-                      <label>
-                        <input type="radio" name="question9" value="a">
-                        a: It has no hyperparameters
-                      </label>
-                      <a href="#" id="explanation9a" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer9b">
-                      <label>
-                        <input type="radio" name="question9" value="b">
-                        b: It doesn’t require labelled data
-                      </label>
-                      <a href="#" id="explanation9b" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer9c">
-                      <label>
-                        <input type="radio" name="question9" value="c">
-                        c: It finds optimal clusters
-                      </label>
-                      <a href="#" id="explanation9c" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                    <div id="answer9d">
-                      <label>
-                        <input type="radio" name="question9" value="d">
-                        d: It works on numeric data
-                      </label>
-                      <a href="#" id="explanation9d" class="accordion" onclick="return false;">Explanation</a>
-                    </div>
-                    <p class="panel">Explanation</p>
-                </div>
-               </div>
-                <button id="submit" class="btn btn-primary">Submit Quiz</button>
-                <div id="results"></div>
-          </div>
-            
+          
             <script>
-              const myQuestions = [{"question":"Silhouette score between 0.5 to 1.0 indicates","answers":{"a":"Excellent clustering","b":"Good clustering","c":"Poor clustering","d":"Weak / Overlapping clusters"},"explanations":{"a":"Values close to 1 indicate well-separated and compact clusters.","b":"Good clustering usually lies around 0.3 to 0.5.","c":"Poor clustering gives silhouette values near 0.","d":"Overlapping clusters give low or negative scores."},"correctAnswer":"a","difficulty":"beginner"},{"question":"What is the purpose of Davies-Bouldin score","answers":{"a":"Indicates non-overlapped clusters","b":"Only measures the similarity","c":"Indicates compactness and well-separated clusters","d":"Measures cohesion of clusters"},"explanations":{"a":"This is an indirect effect, not the main purpose.","b":"It measures more than similarity; it evaluates clustering quality.","c":"Davies-Bouldin score evaluates cluster compactness and separation.","d":"Cohesion alone is not sufficient without separation."},"correctAnswer":"c","difficulty":"intermediate"},{"question":"If we take age feature also, the clustering will be","answers":{"a":"Poor","b":"Good","c":"Remains same","d":"Overlapping"},"explanations":{"a":"Adding irrelevant features can reduce clustering quality.","b":"Additional features do not always improve clustering.","c":"New features usually affect distance calculations.","d":"Poor feature choice may cause overlap."},"correctAnswer":"a","difficulty":"intermediate"},{"question":"Davies-Bouldin score less than 1 indicates","answers":{"a":"Poor clustering","b":"Acceptable","c":"Good clustering","d":"Excellent clustering"},"explanations":{"a":"Poor clustering produces higher DB scores.","b":"DB score below 1 indicates acceptable clustering quality.","c":"Good clustering usually has much lower DB values.","d":"Excellent clustering has DB values close to 0."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Calinski-Harabasz score ranges between","answers":{"a":"1 to 100","b":"0 to 50","c":"-1 to ∞","d":"0 to ∞"},"explanations":{"a":"CH score is not bounded to this range.","b":"No fixed upper limit exists.","c":"CH score is never negative.","d":"CH score starts from 0 and can increase infinitely."},"correctAnswer":"d","difficulty":"intermediate"},{"question":"K-means is used to minimize","answers":{"a":"WCSS","b":"Silhouette score","c":"Davies-Bouldin score","d":"Calinski-Harabasz score"},"explanations":{"a":"K-means minimizes within-cluster sum of squares.","b":"Silhouette score should be maximized.","c":"DB score is evaluated, not minimized by algorithm directly.","d":"CH score is maximized, not minimized."},"correctAnswer":"a","difficulty":"beginner"},{"question":"Why we did feature scaling","answers":{"a":"To reduce overfitting","b":"For better evaluation","c":"Prevent features with large value to dominate and Equal contribution of each feature","d":"To reduce dataset size"},"explanations":{"a":"Scaling does not directly reduce overfitting.","b":"Evaluation metrics do not require scaling.","c":"Scaling ensures fair distance contribution from all features.","d":"Scaling does not reduce data size."},"correctAnswer":"c","difficulty":"beginner"},{"question":"The elbow point represents","answers":{"a":"Minimum WCSS","b":"High CH score","c":"Point where WCSS reduction slows down","d":"Lower index"},"explanations":{"a":"WCSS keeps decreasing with increasing K.","b":"CH score is a separate metric.","c":"Elbow indicates diminishing returns with increasing clusters.","d":"Index has no relation here."},"correctAnswer":"c","difficulty":"intermediate"},{"question":"Overlapping clusters will give","answers":{"a":"Poor Silhouette score","b":"Low Davies-Bouldin score","c":"High CH score","d":"High WCSS"},"explanations":{"a":"Overlapping clusters reduce silhouette values.","b":"Overlap increases DB score.","c":"CH score decreases with overlap.","d":"WCSS alone does not indicate overlap directly."},"correctAnswer":"a","difficulty":"beginner"},{"question":"K-means is unsupervised because","answers":{"a":"It has no hyperparameters","b":"It doesn’t require labelled data","c":"It finds optimal clusters","d":"It works on numeric data"},"explanations":{"a":"K is a hyperparameter in K-means.","b":"K-means works without labeled outputs.","c":"Finding clusters does not define supervision.","d":"Data type does not define learning type."},"correctAnswer":"b","difficulty":"beginner"}];
+              const myQuestions = [{"question":"What does a Silhouette score close to 1 indicate about clustering quality?","answers":{"a":"Data points are assigned to incorrect clusters","b":"Clusters are compact and well separated","c":"Clusters overlap heavily","d":"All clusters contain equal number of samples"},"explanations":{"a":"Incorrect cluster assignment lowers the silhouette score.","b":"A value close to 1 means samples are closer to their own cluster than to neighboring clusters.","c":"Overlapping clusters produce values near 0.","d":"Cluster size equality is not measured by silhouette score."},"correctAnswer":"b","difficulty":"beginner"},{"question":"What does the Davies–Bouldin score measure in clustering evaluation?","answers":{"a":"Trade-off between cluster compactness and separation","b":"Number of clusters formed","c":"Only similarity between cluster centroids","d":"Classification accuracy of clusters"},"explanations":{"a":"The DB index evaluates intra-cluster similarity and inter-cluster separation.","b":"The number of clusters is defined by the algorithm parameter.","c":"It considers both centroid distance and cluster spread.","d":"Clustering is unsupervised so accuracy is not used."},"correctAnswer":"a","difficulty":"beginner"},{"question":"If a new feature highly correlated with an existing feature is added to K-Means clustering, what is the most likely outcome?","answers":{"a":"Clustering performance always improves","b":"Cluster centroids become identical","c":"The feature may add redundancy without improving cluster quality","d":"WCSS automatically becomes zero"},"explanations":{"a":"Additional features do not always improve clustering.","b":"Centroids rarely become identical due to correlation.","c":"Redundant features may not provide new information.","d":"WCSS cannot become zero unless all points equal centroids."},"correctAnswer":"c","difficulty":"beginner"},{"question":"What does a lower Davies–Bouldin score indicate?","answers":{"a":"Poor clustering with overlapping clusters","b":"Better clustering with compact and well-separated clusters","c":"Larger cluster variance","d":"Increased number of clusters"},"explanations":{"a":"Overlapping clusters increase the DB score.","b":"Lower values mean clusters are compact and far apart.","c":"High variance worsens the score.","d":"DB score measures cluster quality, not cluster count."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"The Calinski–Harabasz index evaluates clustering based on which principle?","answers":{"a":"Ratio of between-cluster variance to within-cluster variance","b":"Total number of clusters formed","c":"Average silhouette distance","d":"Density of each cluster"},"explanations":{"a":"A higher ratio indicates well-separated clusters.","b":"CH score does not determine cluster count.","c":"Silhouette score is a separate metric.","d":"Density is not directly used."},"correctAnswer":"a","difficulty":"beginner"},{"question":"Why does K-Means minimize the Within-Cluster Sum of Squares (WCSS)?","answers":{"a":"To maximize cluster overlap","b":"To keep points close to their cluster centroids","c":"To reduce dataset size","d":"To eliminate outliers automatically"},"explanations":{"a":"K-Means tries to reduce overlap.","b":"Minimizing WCSS ensures compact clusters.","c":"Dataset size is unrelated.","d":"K-Means does not specifically remove outliers."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Why is feature scaling important before applying K-Means clustering?","answers":{"a":"It reduces the number of clusters","b":"It prevents features with larger ranges from dominating distance calculations","c":"It removes redundant features automatically","d":"It increases silhouette score directly"},"explanations":{"a":"Cluster number is user defined.","b":"K-Means uses distance metrics sensitive to feature magnitude.","c":"Scaling does not remove redundancy.","d":"Scaling may improve clustering but does not guarantee higher silhouette score."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"In the Elbow Method, what does the “elbow point” represent?","answers":{"a":"The minimum possible WCSS","b":"The point where adding more clusters gives diminishing improvement","c":"The point where clusters become overlapping","d":"The maximum silhouette score"},"explanations":{"a":"WCSS keeps decreasing as clusters increase.","b":"The elbow indicates the optimal trade-off between cluster count and compactness.","c":"Overlap is unrelated to the elbow concept.","d":"Elbow method uses WCSS, not silhouette score."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Which evaluation metric behavior typically indicates overlapping clusters?","answers":{"a":"High Silhouette score","b":"Low Davies–Bouldin score","c":"Low Silhouette score","d":"High Calinski–Harabasz score"},"explanations":{"a":"High silhouette score indicates good separation.","b":"Low DB score indicates good clustering.","c":"Overlapping clusters reduce silhouette score.","d":"High CH score suggests well-separated clusters."},"correctAnswer":"c","difficulty":"intermediate"},{"question":"Why is K-Means classified as an unsupervised learning algorithm?","answers":{"a":"It automatically selects the best number of clusters","b":"It does not require labeled training data","c":"It always finds the global optimal clusters","d":"It only works with categorical features"},"explanations":{"a":"The number of clusters must usually be specified.","b":"Unsupervised learning works without labeled outputs.","c":"K-Means may converge to local optima.","d":"It primarily works with numerical features."},"correctAnswer":"b","difficulty":"beginner"}];
             </script>
-              <script src="./assets/js/assessment_v2.js"></script>  
+            <script src="./assets/js/assessment_v2.js"></script>
           <div class="bug-report-mobile">
               <bug-report id="bug-report" title="[BUG REPORT] CLUSTERING: K-MEANS ALGORITHM" page-type="assesment" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;CLUSTERING: K-MEANS ALGORITHM&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
                           position: fixed; 
