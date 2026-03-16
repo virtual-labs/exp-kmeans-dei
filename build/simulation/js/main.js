@@ -1052,8 +1052,8 @@ function highlightCode(code) {
 
 function downloadPDF() {
   const link = document.createElement('a');
-  link.href = './Exp-Kmeans.pdf';
-  link.download = 'Exp-Kmeans.pdf';
+  link.href = './Experiment-09pdf.pdf';
+  link.download = 'Experiment-09pdf.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
