@@ -2,55 +2,55 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which objective function does the K-Means algorithm minimize during clustering",
+      "question": "Which statement best explains why K-Means uses squared Euclidean distance instead of simple Euclidean distance?",
       "answers": {
-        "a": "Sum of absolute distances",
-        "b": "Within-cluster sum of squared distances (WCSS)",
-        "c": "Maximum inter-cluster distance",
-        "d": "Mean absolute error"
+        "a": "To reduce computational complexity",
+        "b": "To penalize larger deviations more strongly",
+        "c": "To normalize data automatically",
+        "d": "To make clusters non-spherical"
       },
       "explanations": {
-        "a": "K-Means does not minimize absolute distances.",
-        "b": "K-Means minimizes the sum of squared distances between data points and their respective centroids.",
-        "c": "Inter-cluster distance maximization is not the primary objective of K-Means.",
-        "d": "Mean absolute error is used in regression problems."
+        "a": "Squaring actually increases computation slightly.",
+        "b": "Squared distance gives more weight to points far from centroid, improving cluster compactness.",
+        "c": "K-Means does not normalize data automatically.",
+        "d": "Squaring does not change the spherical assumption."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
-      "question": "Which method is used to find optimal number of clusters in a dataset",
+      "question": "What is the main reason K-Means may produce different results on different runs?",
       "answers": {
-        "a": "Dunn index",
-        "b": "Silhouette method",
-        "c": "Elbow method",
-        "d": "None of the above"
+        "a": "Random initialization of centroids",
+        "b": "Different hardware performance",
+        "c": "Change in dataset size",
+        "d": "Deterministic nature of algorithm"
       },
       "explanations": {
-        "a": "Dunn index measures cluster validity but is not commonly used for selecting K directly.",
-        "b": "Silhouette method evaluates clustering quality but the elbow method is typically used to determine K visually.",
-        "c": "Elbow method plots WCSS against K and selects the elbow point as optimal clusters.",
-        "d": "Since the elbow method is used, this option is incorrect."
+        "a": "Initial centroid selection is random, leading to different final clusters.",
+        "b": "Hardware does not affect clustering results.",
+        "c": "Dataset size remains constant in same run.",
+        "d": "K-Means is not fully deterministic due to initialization."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "Centroids reach their final stable position after",
+      "question": "Which condition ensures that K-Means has converged?",
       "answers": {
-        "a": "2 iterations",
-        "b": "5 iterations",
-        "c": "4 iterations",
-        "d": "Depends on dataset and initialization"
+        "a": "Centroids stop moving",
+        "b": "Maximum iterations reached",
+        "c": "Distance becomes zero",
+        "d": "Clusters become equal in size"
       },
       "explanations": {
-        "a": "Convergence is not guaranteed in exactly 2 iterations.",
-        "b": "Different datasets may require different iterations.",
-        "c": "Four iterations cannot be generalized for all datasets.",
-        "d": "The number of iterations depends on the dataset structure and initial centroid selection."
+        "a": "Convergence occurs when centroid positions no longer change.",
+        "b": "This is a stopping condition but not true convergence.",
+        "c": "Distances rarely become zero.",
+        "d": "Equal cluster size is not required."
       },
-      "correctAnswer": "d",
-      "difficulty": "intermediate"
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     },
     {
       "question": "The distance of a point in a cluster to another point in the same cluster is generally",
@@ -70,18 +70,35 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The K-Means clustering algorithm is an",
+      "question": "Why is feature scaling important in K-Means?",
       "answers": {
-        "a": "Convergence process",
-        "b": "Iterative process",
-        "c": "Divergence process",
-        "d": "None of above"
+        "a": "To reduce number of clusters",
+        "b": "To equalize influence of all features in distance calculation",
+        "c": "To increase accuracy automatically",
+        "d": "To remove outliers"
       },
       "explanations": {
-        "a": "Although it converges, the core mechanism is iterative updates.",
-        "b": "K-Means repeatedly assigns clusters and updates centroids until convergence.",
-        "c": "The algorithm does not diverge.",
-        "d": "Since it is iterative, this option is incorrect."
+        "a": "Scaling does not affect K directly.",
+        "b": "Features with large scale dominate distance if not normalized.",
+        "c": "It helps but does not guarantee accuracy.",
+        "d": "Scaling does not remove outliers."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following best describes the role of centroids?",
+      "answers": {
+        "a": "They act as boundary lines",
+        "b": "They represent cluster centers",
+        "c": "They store all data points",
+        "d": "They remove noise"
+      },
+      "explanations": {
+        "a": "Boundaries are implicit, not explicit.",
+        "b": "Centroids are mean positions of clusters.",
+        "c": "Data is not stored in centroids.",
+        "d": "Noise removal is not their function."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
@@ -104,54 +121,37 @@
       "difficulty": "intermediate"
     },
     {
-      "question": "Clusters in K-Means are formed primarily based on",
+      "question": "Why does K-Means prefer compact clusters?",
       "answers": {
-        "a": "Probability",
-        "b": "Similarity in distance",
-        "c": "Density",
-        "d": "Class labels"
+        "a": "Because it minimizes variance within clusters",
+        "b": "Because it maximizes entropy",
+        "c": "Because it uses probability models",
+        "d": "Because it maximizes cluster size"
       },
       "explanations": {
-        "a": "K-Means does not use probability distributions.",
-        "b": "Data points are grouped based on minimum distance to centroids.",
-        "c": "Density-based clustering is used in algorithms like DBSCAN.",
-        "d": "Class labels are used in supervised learning, not clustering."
+        "a": "Objective function minimizes intra-cluster variance (WCSS).",
+        "b": "Entropy is not used here.",
+        "c": "No probabilistic modeling is involved.",
+        "d": "Cluster size is not maximized explicitly."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What will most likely happen if the initial centroids are chosen poorly in K-Means",
-      "answers": {
-        "a": "Algorithm always finds the global optimum",
-        "b": "Algorithm may converge to a local optimum",
-        "c": "Clusters become identical",
-        "d": "Algorithm will not converge"
-      },
-      "explanations": {
-        "a": "K-Means does not guarantee a global optimum.",
-        "b": "Poor initialization can cause the algorithm to settle in a local optimum.",
-        "c": "Clusters generally do not become identical.",
-        "d": "The algorithm still converges but may produce suboptimal clusters."
-      },
-      "correctAnswer": "b",
+      "correctAnswer": "a",
       "difficulty": "intermediate"
     },
     {
-      "question": "If we skip feature scaling, which feature will dominate clustering",
+      "question": "Which property of K-Means makes it unsuitable for categorical data?",
       "answers": {
-        "a": "Feature with more variance",
-        "b": "Feature with missing values",
-        "c": "Feature with categorical values",
-        "d": "Feature with smaller values"
+        "a": "It uses probability",
+        "b": "It requires mean computation",
+        "c": "It depends on labeled data",
+        "d": "It uses density"
       },
       "explanations": {
-        "a": "Features with larger ranges or variance dominate distance calculations.",
-        "b": "Missing values do not dominate clustering.",
-        "c": "Categorical values are not used directly in K-Means.",
-        "d": "Smaller values have less influence on distance calculations."
+        "a": "No probability used.",
+        "b": "Mean cannot be computed for categorical features.",
+        "c": "It is unsupervised.",
+        "d": "It is not density-based."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {

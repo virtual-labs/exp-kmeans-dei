@@ -108,7 +108,7 @@ Where:
 - **Step 1:** Choose K (number of clusters) 
 - **Step 2:** Initialize K centroids: 
     - **Random:** Pick K random data points as initial centroids 
-    - **K-Means++:** Pick first centroid randomly; for each subsequent centroid, pick point with probability proportional to squared distance from nearest existing centroid. 
+    - **Pick first centroid randomly:** for each subsequent centroid, pick point with probability proportional to squared distance from nearest existing centroid. 
 - **Step 3: REPEAT until convergence:** 
     - **Step 3a: Assignment Step** 
         - For each data point: 

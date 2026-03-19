@@ -380,14 +380,14 @@
           
           
                 <div class="question beginner">
-                  What does a Silhouette score close to 1 indicate about clustering quality?
+                  Why does adding more clusters (increasing K) always reduce WCSS?
                 </div>
           
                 <div class="answers">
                   <div id="answer0a">
                     <label>
                       <input type="radio" name="question0" value="a">
-                      a: Data points are assigned to incorrect clusters
+                      a: Because clusters become larger
                     </label>
                     <a href="#" id="explanation0a" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -395,7 +395,7 @@
                   <div id="answer0b">
                     <label>
                       <input type="radio" name="question0" value="b">
-                      b: Clusters are compact and well separated
+                      b: Because each point gets closer to its assigned centroid
                     </label>
                     <a href="#" id="explanation0b" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -403,7 +403,7 @@
                   <div id="answer0c">
                     <label>
                       <input type="radio" name="question0" value="c">
-                      c: Clusters overlap heavily
+                      c: Because distances are normalized
                     </label>
                     <a href="#" id="explanation0c" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -411,7 +411,7 @@
                   <div id="answer0d">
                     <label>
                       <input type="radio" name="question0" value="d">
-                      d: All clusters contain equal number of samples
+                      d: Because centroids stop updating
                     </label>
                     <a href="#" id="explanation0d" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -419,14 +419,14 @@
                 </div>
           
                 <div class="question beginner">
-                  What does the Davies–Bouldin score measure in clustering evaluation?
+                  If a new feature that is highly correlated with an existing feature is added to a K-Means clustering dataset, what is the most likely outcome?
                 </div>
           
                 <div class="answers">
                   <div id="answer1a">
                     <label>
                       <input type="radio" name="question1" value="a">
-                      a: Trade-off between cluster compactness and separation
+                      a: Clustering performance will always improve
                     </label>
                     <a href="#" id="explanation1a" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -434,7 +434,7 @@
                   <div id="answer1b">
                     <label>
                       <input type="radio" name="question1" value="b">
-                      b: Number of clusters formed
+                      b: Cluster centroids will become identical
                     </label>
                     <a href="#" id="explanation1b" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -442,7 +442,7 @@
                   <div id="answer1c">
                     <label>
                       <input type="radio" name="question1" value="c">
-                      c: Only similarity between cluster centroids
+                      c: The new feature may introduce redundancy without improving cluster quality
                     </label>
                     <a href="#" id="explanation1c" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -450,7 +450,7 @@
                   <div id="answer1d">
                     <label>
                       <input type="radio" name="question1" value="d">
-                      d: Classification accuracy of clusters
+                      d: WCSS will automatically become zero
                     </label>
                     <a href="#" id="explanation1d" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -458,14 +458,14 @@
                 </div>
           
                 <div class="question beginner">
-                  If a new feature highly correlated with an existing feature is added to K-Means clustering, what is the most likely outcome?
+                  Why does K-Means assume clusters are convex (spherical)?
                 </div>
           
                 <div class="answers">
                   <div id="answer2a">
                     <label>
                       <input type="radio" name="question2" value="a">
-                      a: Clustering performance always improves
+                      a: Because it uses linear regression
                     </label>
                     <a href="#" id="explanation2a" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -473,7 +473,7 @@
                   <div id="answer2b">
                     <label>
                       <input type="radio" name="question2" value="b">
-                      b: Cluster centroids become identical
+                      b: Because distance is measured from a single centroid
                     </label>
                     <a href="#" id="explanation2b" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -481,7 +481,7 @@
                   <div id="answer2c">
                     <label>
                       <input type="radio" name="question2" value="c">
-                      c: The feature may add redundancy without improving cluster quality
+                      c: Because it uses probability distributions
                     </label>
                     <a href="#" id="explanation2c" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -489,9 +489,204 @@
                   <div id="answer2d">
                     <label>
                       <input type="radio" name="question2" value="d">
-                      d: WCSS automatically becomes zero
+                      d: Because it sorts data
                     </label>
                     <a href="#" id="explanation2d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  What happens if K is chosen too small?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer3a">
+                    <label>
+                      <input type="radio" name="question3" value="a">
+                      a: Clusters become too specific
+                    </label>
+                    <a href="#" id="explanation3a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3b">
+                    <label>
+                      <input type="radio" name="question3" value="b">
+                      b: Different groups may be merged into one cluster
+                    </label>
+                    <a href="#" id="explanation3b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3c">
+                    <label>
+                      <input type="radio" name="question3" value="c">
+                      c: WCSS becomes zero
+                    </label>
+                    <a href="#" id="explanation3c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer3d">
+                    <label>
+                      <input type="radio" name="question3" value="d">
+                      d: Algorithm diverges
+                    </label>
+                    <a href="#" id="explanation3d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  Why does K-Means require multiple runs with different initializations?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer4a">
+                    <label>
+                      <input type="radio" name="question4" value="a">
+                      a: To reduce dataset size
+                    </label>
+                    <a href="#" id="explanation4a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4b">
+                    <label>
+                      <input type="radio" name="question4" value="b">
+                      b: To avoid poor local minima and improve solution quality
+                    </label>
+                    <a href="#" id="explanation4b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4c">
+                    <label>
+                      <input type="radio" name="question4" value="c">
+                      c: To change number of features
+                    </label>
+                    <a href="#" id="explanation4c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer4d">
+                    <label>
+                      <input type="radio" name="question4" value="d">
+                      d: To normalize data
+                    </label>
+                    <a href="#" id="explanation4d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  Why can K-Means fail when clusters have different densities and sizes simultaneously?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer5a">
+                    <label>
+                      <input type="radio" name="question5" value="a">
+                      a: Because it assumes uniform density and size
+                    </label>
+                    <a href="#" id="explanation5a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5b">
+                    <label>
+                      <input type="radio" name="question5" value="b">
+                      b: Because it ignores centroids
+                    </label>
+                    <a href="#" id="explanation5b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5c">
+                    <label>
+                      <input type="radio" name="question5" value="c">
+                      c: Because it cannot compute distances
+                    </label>
+                    <a href="#" id="explanation5c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer5d">
+                    <label>
+                      <input type="radio" name="question5" value="d">
+                      d: Because it removes small clusters
+                    </label>
+                    <a href="#" id="explanation5d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question beginner">
+                  What does a Silhouette score close to 1 signify about the clustering result?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer6a">
+                    <label>
+                      <input type="radio" name="question6" value="a">
+                      a: Data points are incorrectly assigned
+                    </label>
+                    <a href="#" id="explanation6a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6b">
+                    <label>
+                      <input type="radio" name="question6" value="b">
+                      b: Clusters are dense and well separated
+                    </label>
+                    <a href="#" id="explanation6b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6c">
+                    <label>
+                      <input type="radio" name="question6" value="c">
+                      c: Clusters are highly overlapping
+                    </label>
+                    <a href="#" id="explanation6c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer6d">
+                    <label>
+                      <input type="radio" name="question6" value="d">
+                      d: All clusters have equal number of samples
+                    </label>
+                    <a href="#" id="explanation6d" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                </div>
+          
+                <div class="question intermediate">
+                  What is the main idea behind the Elbow Method in clustering?
+                </div>
+          
+                <div class="answers">
+                  <div id="answer7a">
+                    <label>
+                      <input type="radio" name="question7" value="a">
+                      a: To find minimum WCSS
+                    </label>
+                    <a href="#" id="explanation7a" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7b">
+                    <label>
+                      <input type="radio" name="question7" value="b">
+                      b: To identify the point where adding more clusters gives little improvement
+                    </label>
+                    <a href="#" id="explanation7b" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7c">
+                    <label>
+                      <input type="radio" name="question7" value="c">
+                      c: To maximize silhouette score
+                    </label>
+                    <a href="#" id="explanation7c" class="accordion" onclick="return false;">Explanation</a>
+                  </div>
+                  <p class="panel">Explanation</p>
+                  <div id="answer7d">
+                    <label>
+                      <input type="radio" name="question7" value="d">
+                      d: To reduce dataset size
+                    </label>
+                    <a href="#" id="explanation7d" class="accordion" onclick="return false;">Explanation</a>
                   </div>
                   <p class="panel">Explanation</p>
                 </div>
@@ -501,205 +696,10 @@
                 </div>
           
                 <div class="answers">
-                  <div id="answer3a">
-                    <label>
-                      <input type="radio" name="question3" value="a">
-                      a: Poor clustering with overlapping clusters
-                    </label>
-                    <a href="#" id="explanation3a" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer3b">
-                    <label>
-                      <input type="radio" name="question3" value="b">
-                      b: Better clustering with compact and well-separated clusters
-                    </label>
-                    <a href="#" id="explanation3b" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer3c">
-                    <label>
-                      <input type="radio" name="question3" value="c">
-                      c: Larger cluster variance
-                    </label>
-                    <a href="#" id="explanation3c" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer3d">
-                    <label>
-                      <input type="radio" name="question3" value="d">
-                      d: Increased number of clusters
-                    </label>
-                    <a href="#" id="explanation3d" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                </div>
-          
-                <div class="question beginner">
-                  The Calinski–Harabasz index evaluates clustering based on which principle?
-                </div>
-          
-                <div class="answers">
-                  <div id="answer4a">
-                    <label>
-                      <input type="radio" name="question4" value="a">
-                      a: Ratio of between-cluster variance to within-cluster variance
-                    </label>
-                    <a href="#" id="explanation4a" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer4b">
-                    <label>
-                      <input type="radio" name="question4" value="b">
-                      b: Total number of clusters formed
-                    </label>
-                    <a href="#" id="explanation4b" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer4c">
-                    <label>
-                      <input type="radio" name="question4" value="c">
-                      c: Average silhouette distance
-                    </label>
-                    <a href="#" id="explanation4c" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer4d">
-                    <label>
-                      <input type="radio" name="question4" value="d">
-                      d: Density of each cluster
-                    </label>
-                    <a href="#" id="explanation4d" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                </div>
-          
-                <div class="question intermediate">
-                  Why does K-Means minimize the Within-Cluster Sum of Squares (WCSS)?
-                </div>
-          
-                <div class="answers">
-                  <div id="answer5a">
-                    <label>
-                      <input type="radio" name="question5" value="a">
-                      a: To maximize cluster overlap
-                    </label>
-                    <a href="#" id="explanation5a" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer5b">
-                    <label>
-                      <input type="radio" name="question5" value="b">
-                      b: To keep points close to their cluster centroids
-                    </label>
-                    <a href="#" id="explanation5b" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer5c">
-                    <label>
-                      <input type="radio" name="question5" value="c">
-                      c: To reduce dataset size
-                    </label>
-                    <a href="#" id="explanation5c" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer5d">
-                    <label>
-                      <input type="radio" name="question5" value="d">
-                      d: To eliminate outliers automatically
-                    </label>
-                    <a href="#" id="explanation5d" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                </div>
-          
-                <div class="question intermediate">
-                  Why is feature scaling important before applying K-Means clustering?
-                </div>
-          
-                <div class="answers">
-                  <div id="answer6a">
-                    <label>
-                      <input type="radio" name="question6" value="a">
-                      a: It reduces the number of clusters
-                    </label>
-                    <a href="#" id="explanation6a" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer6b">
-                    <label>
-                      <input type="radio" name="question6" value="b">
-                      b: It prevents features with larger ranges from dominating distance calculations
-                    </label>
-                    <a href="#" id="explanation6b" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer6c">
-                    <label>
-                      <input type="radio" name="question6" value="c">
-                      c: It removes redundant features automatically
-                    </label>
-                    <a href="#" id="explanation6c" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer6d">
-                    <label>
-                      <input type="radio" name="question6" value="d">
-                      d: It increases silhouette score directly
-                    </label>
-                    <a href="#" id="explanation6d" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                </div>
-          
-                <div class="question intermediate">
-                  In the Elbow Method, what does the “elbow point” represent?
-                </div>
-          
-                <div class="answers">
-                  <div id="answer7a">
-                    <label>
-                      <input type="radio" name="question7" value="a">
-                      a: The minimum possible WCSS
-                    </label>
-                    <a href="#" id="explanation7a" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer7b">
-                    <label>
-                      <input type="radio" name="question7" value="b">
-                      b: The point where adding more clusters gives diminishing improvement
-                    </label>
-                    <a href="#" id="explanation7b" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer7c">
-                    <label>
-                      <input type="radio" name="question7" value="c">
-                      c: The point where clusters become overlapping
-                    </label>
-                    <a href="#" id="explanation7c" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                  <div id="answer7d">
-                    <label>
-                      <input type="radio" name="question7" value="d">
-                      d: The maximum silhouette score
-                    </label>
-                    <a href="#" id="explanation7d" class="accordion" onclick="return false;">Explanation</a>
-                  </div>
-                  <p class="panel">Explanation</p>
-                </div>
-          
-                <div class="question intermediate">
-                  Which evaluation metric behavior typically indicates overlapping clusters?
-                </div>
-          
-                <div class="answers">
                   <div id="answer8a">
                     <label>
                       <input type="radio" name="question8" value="a">
-                      a: High Silhouette score
+                      a: Poor clustering with high overlap
                     </label>
                     <a href="#" id="explanation8a" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -707,7 +707,7 @@
                   <div id="answer8b">
                     <label>
                       <input type="radio" name="question8" value="b">
-                      b: Low Davies–Bouldin score
+                      b: Better clustering with compact and distinct clusters
                     </label>
                     <a href="#" id="explanation8b" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -715,7 +715,7 @@
                   <div id="answer8c">
                     <label>
                       <input type="radio" name="question8" value="c">
-                      c: Low Silhouette score
+                      c: High variance within clusters
                     </label>
                     <a href="#" id="explanation8c" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -723,22 +723,22 @@
                   <div id="answer8d">
                     <label>
                       <input type="radio" name="question8" value="d">
-                      d: High Calinski–Harabasz score
+                      d: Larger number of clusters
                     </label>
                     <a href="#" id="explanation8d" class="accordion" onclick="return false;">Explanation</a>
                   </div>
                   <p class="panel">Explanation</p>
                 </div>
           
-                <div class="question beginner">
-                  Why is K-Means classified as an unsupervised learning algorithm?
+                <div class="question intermediate">
+                  What does a low Silhouette score indicate?
                 </div>
           
                 <div class="answers">
                   <div id="answer9a">
                     <label>
                       <input type="radio" name="question9" value="a">
-                      a: It automatically selects the best number of clusters
+                      a: Strong cluster separation
                     </label>
                     <a href="#" id="explanation9a" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -746,7 +746,7 @@
                   <div id="answer9b">
                     <label>
                       <input type="radio" name="question9" value="b">
-                      b: It does not require labeled training data
+                      b: Points are near decision boundaries or misclassified
                     </label>
                     <a href="#" id="explanation9b" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -754,7 +754,7 @@
                   <div id="answer9c">
                     <label>
                       <input type="radio" name="question9" value="c">
-                      c: It always finds the global optimal clusters
+                      c: Perfect clustering
                     </label>
                     <a href="#" id="explanation9c" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -762,7 +762,7 @@
                   <div id="answer9d">
                     <label>
                       <input type="radio" name="question9" value="d">
-                      d: It only works with categorical features
+                      d: Equal cluster sizes
                     </label>
                     <a href="#" id="explanation9d" class="accordion" onclick="return false;">Explanation</a>
                   </div>
@@ -774,7 +774,7 @@
             </div>
           
             <script>
-              const myQuestions = [{"question":"What does a Silhouette score close to 1 indicate about clustering quality?","answers":{"a":"Data points are assigned to incorrect clusters","b":"Clusters are compact and well separated","c":"Clusters overlap heavily","d":"All clusters contain equal number of samples"},"explanations":{"a":"Incorrect cluster assignment lowers the silhouette score.","b":"A value close to 1 means samples are closer to their own cluster than to neighboring clusters.","c":"Overlapping clusters produce values near 0.","d":"Cluster size equality is not measured by silhouette score."},"correctAnswer":"b","difficulty":"beginner"},{"question":"What does the Davies–Bouldin score measure in clustering evaluation?","answers":{"a":"Trade-off between cluster compactness and separation","b":"Number of clusters formed","c":"Only similarity between cluster centroids","d":"Classification accuracy of clusters"},"explanations":{"a":"The DB index evaluates intra-cluster similarity and inter-cluster separation.","b":"The number of clusters is defined by the algorithm parameter.","c":"It considers both centroid distance and cluster spread.","d":"Clustering is unsupervised so accuracy is not used."},"correctAnswer":"a","difficulty":"beginner"},{"question":"If a new feature highly correlated with an existing feature is added to K-Means clustering, what is the most likely outcome?","answers":{"a":"Clustering performance always improves","b":"Cluster centroids become identical","c":"The feature may add redundancy without improving cluster quality","d":"WCSS automatically becomes zero"},"explanations":{"a":"Additional features do not always improve clustering.","b":"Centroids rarely become identical due to correlation.","c":"Redundant features may not provide new information.","d":"WCSS cannot become zero unless all points equal centroids."},"correctAnswer":"c","difficulty":"beginner"},{"question":"What does a lower Davies–Bouldin score indicate?","answers":{"a":"Poor clustering with overlapping clusters","b":"Better clustering with compact and well-separated clusters","c":"Larger cluster variance","d":"Increased number of clusters"},"explanations":{"a":"Overlapping clusters increase the DB score.","b":"Lower values mean clusters are compact and far apart.","c":"High variance worsens the score.","d":"DB score measures cluster quality, not cluster count."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"The Calinski–Harabasz index evaluates clustering based on which principle?","answers":{"a":"Ratio of between-cluster variance to within-cluster variance","b":"Total number of clusters formed","c":"Average silhouette distance","d":"Density of each cluster"},"explanations":{"a":"A higher ratio indicates well-separated clusters.","b":"CH score does not determine cluster count.","c":"Silhouette score is a separate metric.","d":"Density is not directly used."},"correctAnswer":"a","difficulty":"beginner"},{"question":"Why does K-Means minimize the Within-Cluster Sum of Squares (WCSS)?","answers":{"a":"To maximize cluster overlap","b":"To keep points close to their cluster centroids","c":"To reduce dataset size","d":"To eliminate outliers automatically"},"explanations":{"a":"K-Means tries to reduce overlap.","b":"Minimizing WCSS ensures compact clusters.","c":"Dataset size is unrelated.","d":"K-Means does not specifically remove outliers."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Why is feature scaling important before applying K-Means clustering?","answers":{"a":"It reduces the number of clusters","b":"It prevents features with larger ranges from dominating distance calculations","c":"It removes redundant features automatically","d":"It increases silhouette score directly"},"explanations":{"a":"Cluster number is user defined.","b":"K-Means uses distance metrics sensitive to feature magnitude.","c":"Scaling does not remove redundancy.","d":"Scaling may improve clustering but does not guarantee higher silhouette score."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"In the Elbow Method, what does the “elbow point” represent?","answers":{"a":"The minimum possible WCSS","b":"The point where adding more clusters gives diminishing improvement","c":"The point where clusters become overlapping","d":"The maximum silhouette score"},"explanations":{"a":"WCSS keeps decreasing as clusters increase.","b":"The elbow indicates the optimal trade-off between cluster count and compactness.","c":"Overlap is unrelated to the elbow concept.","d":"Elbow method uses WCSS, not silhouette score."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Which evaluation metric behavior typically indicates overlapping clusters?","answers":{"a":"High Silhouette score","b":"Low Davies–Bouldin score","c":"Low Silhouette score","d":"High Calinski–Harabasz score"},"explanations":{"a":"High silhouette score indicates good separation.","b":"Low DB score indicates good clustering.","c":"Overlapping clusters reduce silhouette score.","d":"High CH score suggests well-separated clusters."},"correctAnswer":"c","difficulty":"intermediate"},{"question":"Why is K-Means classified as an unsupervised learning algorithm?","answers":{"a":"It automatically selects the best number of clusters","b":"It does not require labeled training data","c":"It always finds the global optimal clusters","d":"It only works with categorical features"},"explanations":{"a":"The number of clusters must usually be specified.","b":"Unsupervised learning works without labeled outputs.","c":"K-Means may converge to local optima.","d":"It primarily works with numerical features."},"correctAnswer":"b","difficulty":"beginner"}];
+              const myQuestions = [{"question":"Why does adding more clusters (increasing K) always reduce WCSS?","answers":{"a":"Because clusters become larger","b":"Because each point gets closer to its assigned centroid","c":"Because distances are normalized","d":"Because centroids stop updating"},"explanations":{"a":"Increasing K reduces cluster size, not increases it.","b":"More clusters mean centroids are closer to points, reducing squared distances.","c":"No normalization is involved.","d":"Centroids still update until convergence."},"correctAnswer":"b","difficulty":"beginner"},{"question":"If a new feature that is highly correlated with an existing feature is added to a K-Means clustering dataset, what is the most likely outcome?","answers":{"a":"Clustering performance will always improve","b":"Cluster centroids will become identical","c":"The new feature may introduce redundancy without improving cluster quality","d":"WCSS will automatically become zero"},"explanations":{"a":"Adding more features does not guarantee better clustering performance.","b":"Even if features are correlated, centroids do not become identical.","c":"Highly correlated features often provide duplicate information, which may not enhance clustering.","d":"WCSS becomes zero only when all data points coincide exactly with their centroids."},"correctAnswer":"c","difficulty":"beginner"},{"question":"Why does K-Means assume clusters are convex (spherical)?","answers":{"a":"Because it uses linear regression","b":"Because distance is measured from a single centroid","c":"Because it uses probability distributions","d":"Because it sorts data"},"explanations":{"a":"K-Means does not use regression.","b":"Distance-based assignment around centroids naturally forms spherical regions.","c":"No probability model is used.","d":"Sorting is irrelevant."},"correctAnswer":"b","difficulty":"beginner"},{"question":"What happens if K is chosen too small?","answers":{"a":"Clusters become too specific","b":"Different groups may be merged into one cluster","c":"WCSS becomes zero","d":"Algorithm diverges"},"explanations":{"a":"This happens when K is too large.","b":"Insufficient clusters force unrelated data into same cluster.","c":"WCSS is not zero unless perfect fit.","d":"Algorithm still converges."},"correctAnswer":"b","difficulty":"beginner"},{"question":"Why does K-Means require multiple runs with different initializations?","answers":{"a":"To reduce dataset size","b":"To avoid poor local minima and improve solution quality","c":"To change number of features","d":"To normalize data"},"explanations":{"a":"Dataset remains same.","b":"Different initializations help find better clustering.","c":"Features are unchanged.","d":"Normalization is separate preprocessing step."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"Why can K-Means fail when clusters have different densities and sizes simultaneously?","answers":{"a":"Because it assumes uniform density and size","b":"Because it ignores centroids","c":"Because it cannot compute distances","d":"Because it removes small clusters"},"explanations":{"a":"K-Means assumes similar density and size, causing misclassification.","b":"Centroids are central to the algorithm.","c":"Distance computation is core.","d":"Clusters are not explicitly removed."},"correctAnswer":"a","difficulty":"intermediate"},{"question":"What does a Silhouette score close to 1 signify about the clustering result?","answers":{"a":"Data points are incorrectly assigned","b":"Clusters are dense and well separated","c":"Clusters are highly overlapping","d":"All clusters have equal number of samples"},"explanations":{"a":"Incorrect assignments reduce the score.","b":"A score near 1 means points are much closer to their own cluster than to others.","c":"Overlapping clusters result in scores near 0.","d":"The metric does not measure cluster size equality."},"correctAnswer":"b","difficulty":"beginner"},{"question":"What is the main idea behind the Elbow Method in clustering?","answers":{"a":"To find minimum WCSS","b":"To identify the point where adding more clusters gives little improvement","c":"To maximize silhouette score","d":"To reduce dataset size"},"explanations":{"a":"WCSS keeps decreasing as K increases.","b":"The elbow point represents diminishing returns in reducing WCSS.","c":"Silhouette score is a separate method.","d":"Dataset size remains unchanged."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"What does a lower Davies–Bouldin score indicate?","answers":{"a":"Poor clustering with high overlap","b":"Better clustering with compact and distinct clusters","c":"High variance within clusters","d":"Larger number of clusters"},"explanations":{"a":"Poor clustering increases the score.","b":"Lower values indicate better separation and compactness.","c":"High variance worsens clustering quality.","d":"It does not directly indicate number of clusters."},"correctAnswer":"b","difficulty":"intermediate"},{"question":"What does a low Silhouette score indicate?","answers":{"a":"Strong cluster separation","b":"Points are near decision boundaries or misclassified","c":"Perfect clustering","d":"Equal cluster sizes"},"explanations":{"a":"Strong separation gives high score.","b":"Low values indicate ambiguity in cluster assignment.","c":"Perfect clustering corresponds to score near 1.","d":"Cluster size is not evaluated."},"correctAnswer":"b","difficulty":"intermediate"}];
             </script>
             <script src="./assets/js/assessment_v2.js"></script>
           <div class="bug-report-mobile">
