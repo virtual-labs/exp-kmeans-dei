@@ -345,9 +345,9 @@ print("Davies-Bouldin Index:", db_score)`,
     blocks: [
       {
         code: `# Interactive K-Means Simulation
-Click the 'Enter Interactive Animation' button to open the full-screen simulator.
+Click the 'Launch Interactive Simulation' button to open the full-screen simulator.
 Explore how K-Means Clustering segments the customer dataset in real-time.`,
-        output: `<div class="output-success">Full-Screen Simulator Ready. Click the 'Enter Interactive Animation' button to start exploring.</div>`
+        output: `<div class="output-success">Full-Screen Simulator Ready. Click the 'Launch Interactive Simulation' button to start exploring.</div>`
       }
     ]
   }
@@ -576,7 +576,7 @@ function updateUI() {
         <p>You have successfully completed the K-Means Clustering experiment. You now understand how K-Means groups data into clusters and how the Elbow method helps determine the optimal number of clusters.</p>
         <button id="enterSimBtn" class="btn-enter-animation">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          Enter Interactive Animation
+          Launch Interactive Simulation
         </button>
       </div>
     `;
