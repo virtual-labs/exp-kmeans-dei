@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Why does adding more clusters (increasing K) always reduce WCSS?",
+      "answers": {
+        "a": "Because clusters become larger",
+        "b": "Because each point gets closer to its assigned centroid",
+        "c": "Because distances are normalized",
+        "d": "Because centroids stop updating"
+      },
+      "explanations": {
+        "a": "Increasing K reduces cluster size, not increases it.",
+        "b": "More clusters mean centroids are closer to points, reducing squared distances.",
+        "c": "No normalization is involved.",
+        "d": "Centroids still update until convergence."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If a new feature that is highly correlated with an existing feature is added to a K-Means clustering dataset, what is the most likely outcome?",
+      "answers": {
+        "a": "Clustering performance will always improve",
+        "b": "Cluster centroids will become identical",
+        "c": "The new feature may introduce redundancy without improving cluster quality",
+        "d": "WCSS will automatically become zero"
+      },
+      "explanations": {
+        "a": "Adding more features does not guarantee better clustering performance.",
+        "b": "Even if features are correlated, centroids do not become identical.",
+        "c": "Highly correlated features often provide duplicate information, which may not enhance clustering.",
+        "d": "WCSS becomes zero only when all data points coincide exactly with their centroids."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why does K-Means assume clusters are convex (spherical)?",
+      "answers": {
+        "a": "Because it uses linear regression",
+        "b": "Because distance is measured from a single centroid",
+        "c": "Because it uses probability distributions",
+        "d": "Because it sorts data"
+      },
+      "explanations": {
+        "a": "K-Means does not use regression.",
+        "b": "Distance-based assignment around centroids naturally forms spherical regions.",
+        "c": "No probability model is used.",
+        "d": "Sorting is irrelevant."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens if K is chosen too small?",
+      "answers": {
+        "a": "Clusters become too specific",
+        "b": "Different groups may be merged into one cluster",
+        "c": "WCSS becomes zero",
+        "d": "Algorithm diverges"
+      },
+      "explanations": {
+        "a": "This happens when K is too large.",
+        "b": "Insufficient clusters force unrelated data into same cluster.",
+        "c": "WCSS is not zero unless perfect fit.",
+        "d": "Algorithm still converges."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why does K-Means require multiple runs with different initializations?",
+      "answers": {
+        "a": "To reduce dataset size",
+        "b": "To avoid poor local minima and improve solution quality",
+        "c": "To change number of features",
+        "d": "To normalize data"
+      },
+      "explanations": {
+        "a": "Dataset remains same.",
+        "b": "Different initializations help find better clustering.",
+        "c": "Features are unchanged.",
+        "d": "Normalization is separate preprocessing step."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why can K-Means fail when clusters have different densities and sizes simultaneously?",
+      "answers": {
+        "a": "Because it assumes uniform density and size",
+        "b": "Because it ignores centroids",
+        "c": "Because it cannot compute distances",
+        "d": "Because it removes small clusters"
+      },
+      "explanations": {
+        "a": "K-Means assumes similar density and size, causing misclassification.",
+        "b": "Centroids are central to the algorithm.",
+        "c": "Distance computation is core.",
+        "d": "Clusters are not explicitly removed."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does a Silhouette score close to 1 signify about the clustering result?",
+      "answers": {
+        "a": "Data points are incorrectly assigned",
+        "b": "Clusters are dense and well separated",
+        "c": "Clusters are highly overlapping",
+        "d": "All clusters have equal number of samples"
+      },
+      "explanations": {
+        "a": "Incorrect assignments reduce the score.",
+        "b": "A score near 1 means points are much closer to their own cluster than to others.",
+        "c": "Overlapping clusters result in scores near 0.",
+        "d": "The metric does not measure cluster size equality."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the main idea behind the Elbow Method in clustering?",
+      "answers": {
+        "a": "To find minimum WCSS",
+        "b": "To identify the point where adding more clusters gives little improvement",
+        "c": "To maximize silhouette score",
+        "d": "To reduce dataset size"
+      },
+      "explanations": {
+        "a": "WCSS keeps decreasing as K increases.",
+        "b": "The elbow point represents diminishing returns in reducing WCSS.",
+        "c": "Silhouette score is a separate method.",
+        "d": "Dataset size remains unchanged."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does a lower Davies–Bouldin score indicate?",
+      "answers": {
+        "a": "Poor clustering with high overlap",
+        "b": "Better clustering with compact and distinct clusters",
+        "c": "High variance within clusters",
+        "d": "Larger number of clusters"
+      },
+      "explanations": {
+        "a": "Poor clustering increases the score.",
+        "b": "Lower values indicate better separation and compactness.",
+        "c": "High variance worsens clustering quality.",
+        "d": "It does not directly indicate number of clusters."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does a low Silhouette score indicate?",
+      "answers": {
+        "a": "Strong cluster separation",
+        "b": "Points are near decision boundaries or misclassified",
+        "c": "Perfect clustering",
+        "d": "Equal cluster sizes"
+      },
+      "explanations": {
+        "a": "Strong separation gives high score.",
+        "b": "Low values indicate ambiguity in cluster assignment.",
+        "c": "Perfect clustering corresponds to score near 1.",
+        "d": "Cluster size is not evaluated."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    }
+  ]
+}

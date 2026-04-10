@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which statement best explains why K-Means uses squared Euclidean distance instead of simple Euclidean distance?",
+      "answers": {
+        "a": "To reduce computational complexity",
+        "b": "To penalize larger deviations more strongly",
+        "c": "To normalize data automatically",
+        "d": "To make clusters non-spherical"
+      },
+      "explanations": {
+        "a": "Squaring actually increases computation slightly.",
+        "b": "Squared distance gives more weight to points far from centroid, improving cluster compactness.",
+        "c": "K-Means does not normalize data automatically.",
+        "d": "Squaring does not change the spherical assumption."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the main reason K-Means may produce different results on different runs?",
+      "answers": {
+        "a": "Random initialization of centroids",
+        "b": "Different hardware performance",
+        "c": "Change in dataset size",
+        "d": "Deterministic nature of algorithm"
+      },
+      "explanations": {
+        "a": "Initial centroid selection is random, leading to different final clusters.",
+        "b": "Hardware does not affect clustering results.",
+        "c": "Dataset size remains constant in same run.",
+        "d": "K-Means is not fully deterministic due to initialization."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which condition ensures that K-Means has converged?",
+      "answers": {
+        "a": "Centroids stop moving",
+        "b": "Maximum iterations reached",
+        "c": "Distance becomes zero",
+        "d": "Clusters become equal in size"
+      },
+      "explanations": {
+        "a": "Convergence occurs when centroid positions no longer change.",
+        "b": "This is a stopping condition but not true convergence.",
+        "c": "Distances rarely become zero.",
+        "d": "Equal cluster size is not required."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The distance of a point in a cluster to another point in the same cluster is generally",
+      "answers": {
+        "a": "Greater than its own cluster points",
+        "b": "Lesser than its own cluster points",
+        "c": "Equal",
+        "d": "None of above"
+      },
+      "explanations": {
+        "a": "Points in different clusters usually have larger distances.",
+        "b": "Points within the same cluster tend to be closer to each other.",
+        "c": "Distances are rarely exactly equal.",
+        "d": "Since points are usually closer within the cluster, this is incorrect."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why is feature scaling important in K-Means?",
+      "answers": {
+        "a": "To reduce number of clusters",
+        "b": "To equalize influence of all features in distance calculation",
+        "c": "To increase accuracy automatically",
+        "d": "To remove outliers"
+      },
+      "explanations": {
+        "a": "Scaling does not affect K directly.",
+        "b": "Features with large scale dominate distance if not normalized.",
+        "c": "It helps but does not guarantee accuracy.",
+        "d": "Scaling does not remove outliers."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following best describes the role of centroids?",
+      "answers": {
+        "a": "They act as boundary lines",
+        "b": "They represent cluster centers",
+        "c": "They store all data points",
+        "d": "They remove noise"
+      },
+      "explanations": {
+        "a": "Boundaries are implicit, not explicit.",
+        "b": "Centroids are mean positions of clusters.",
+        "c": "Data is not stored in centroids.",
+        "d": "Noise removal is not their function."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If clusters are highly overlapped, this indicates",
+      "answers": {
+        "a": "Poor clustering",
+        "b": "Good clustering",
+        "c": "Average clustering",
+        "d": "None of above"
+      },
+      "explanations": {
+        "a": "Overlapping clusters mean that the separation between groups is weak.",
+        "b": "Good clustering should have clearly separated groups.",
+        "c": "Overlap indicates low clustering quality rather than average quality.",
+        "d": "Since overlapping means poor clustering, this option is incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why does K-Means prefer compact clusters?",
+      "answers": {
+        "a": "Because it minimizes variance within clusters",
+        "b": "Because it maximizes entropy",
+        "c": "Because it uses probability models",
+        "d": "Because it maximizes cluster size"
+      },
+      "explanations": {
+        "a": "Objective function minimizes intra-cluster variance (WCSS).",
+        "b": "Entropy is not used here.",
+        "c": "No probabilistic modeling is involved.",
+        "d": "Cluster size is not maximized explicitly."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which property of K-Means makes it unsuitable for categorical data?",
+      "answers": {
+        "a": "It uses probability",
+        "b": "It requires mean computation",
+        "c": "It depends on labeled data",
+        "d": "It uses density"
+      },
+      "explanations": {
+        "a": "No probability used.",
+        "b": "Mean cannot be computed for categorical features.",
+        "c": "It is unsupervised.",
+        "d": "It is not density-based."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is K-Means not suitable for clusters with complex shapes",
+      "answers": {
+        "a": "Because it assumes clusters are spherical around centroids",
+        "b": "Because it cannot compute distances",
+        "c": "Because it requires labeled data",
+        "d": "Because it cannot handle numerical data"
+      },
+      "explanations": {
+        "a": "K-Means assumes clusters are roughly spherical and evenly sized.",
+        "b": "Distance computation is the core of K-Means.",
+        "c": "K-Means works with unlabeled data.",
+        "d": "K-Means primarily works with numerical data."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    }
+  ]
+}
